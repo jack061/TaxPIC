@@ -8,11 +8,12 @@ fromDir = r'D:\csy\验证码识别\验证码\红色'  # 存放原始图片文件
 destDir = r'D:\csy\验证码识别\验证码\红色'  # 处理后的图片存放位置
 
 def depoint(img):   #input: gray image去除噪点
-    img_array = img.load()
+    img_array = img.load() # 将图片文件以矩阵形式导入
     w, h = img.size
     for i in range(1, h-1):
         for j in range(1, w-1):
             count = 0
+            # 判断一个点周围的八个点是不是白点
             if (img_array[j,i-1][0] == 255 and img_array[j,i-1][1] == 255 and img_array[j,i-1][2] == 255):
                 count = count + 1
             if (img_array[j,i+1][0] == 255 and img_array[j,i+1][1]==255 and img_array[j,i+1][2]==255):
@@ -53,6 +54,7 @@ def cut(img, filename):
     blackdotsEachColumn = []
     count0 = 0
     img_array = img.load()
+    
     for x in range(w):
         for y in range(h):
             if (img_array[x, y] == (0, 0, 0)):
@@ -60,17 +62,17 @@ def cut(img, filename):
         blackdotsEachColumn.append(count0)  # 变量blackDotsEachColumn记录下来每一列的黑点数量
         count0 = 0
 
-    for x in range(1, w - 1):  # 选定除了边框外的每一列，遍历查找图像的边缘列，每一个起始边缘都有一个对应的结束边缘
+    for x in range(1, w - 1):  # 去掉边框后，按列遍历剩下的部分，查找字符的边缘列，每一个起始边缘都有一个对应的结束边缘
         if (blackdotsEachColumn[x - 1] == 0 and blackdotsEachColumn[x] != 0):  # 从左到右，遍历查找起始边缘
             startEdge.append(x)
         if (blackdotsEachColumn[x] != 0 and blackdotsEachColumn[x + 1] == 0):  # 从左到右，遍历查找结束边缘
             endEdge.append(x)
 
-    for i in range(len(startEdge)):  # 归并本该在一起的部分
+    for i in range(len(startEdge)):  # 遍历起始边缘，归并本该在一起的部分
         # 如果一个块太小，可以认为它属于前一个或后一个块
-        if ((i < (len(startEdge) - 1)) and len(startEdge) >= 1):  # 如果存在起始边缘，且没有遍历到最后一个边缘
+        if ((i < (len(startEdge) - 1)) and len(startEdge) >= 1):  # 如果存在起始边缘，且没有遍历到最后一个边缘（？）
             
-            # 第一个块没有前一个块，所以如果太小的话，肯定跟后一个块是一体的
+            # 第一个块没有前一个块，所以如果他太小的话，肯定跟后一个块是一体的
             if (i == 0 and ((endEdge[i] - startEdge[i]) <= 3) and (blackdotsEachColumn[startEdge[i]] <= 2) and (blackdotsEachColumn[endEdge[i]] <= 2)):
                 startEdge.pop(i + 1)
                 endEdge.pop(i)
@@ -123,7 +125,6 @@ for filename in os.listdir(fromDir):
     f2 = filename  # 保存地址
     filename = destDir+'\\'+filename  # 打开地址
     img = Image.open(filename)
-    # img=Image.open(r'C:\Users\邹盛\Desktop\验证码\蓝色\265.png')
     img_array = img.load()
     x,y = img.size
 
