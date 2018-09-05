@@ -1,3 +1,7 @@
 /PIC
 /venv
+<<<<<<< HEAD
 .idea
+=======
+/.idea/*
+>>>>>>> parent of 8d9b950... 0905
