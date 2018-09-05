@@ -1,4 +1,4 @@
-# 找出所有蓝色字母，切割出来
+# 找出所有红色字母，切割出来
 from PIL import Image
 from pylab import *
 import os
