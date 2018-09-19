@@ -1,33 +1,73 @@
-# 找出所有字母，切割出来
+# 用于对下载的验证码进行二值化、降噪、切分
 from PIL import Image
 from pylab import *
 import os
 import math
 
-fromDir = r'D:\验证码识别\黄色'  # 存放原始图片文件的文件夹
-destDir = r'D:\Code\TaxPIC\PIC\切分\红色'  # 处理后的图片存放位置
+
+fromDir = r'D:\pic'  # 存放原始图片文件的文件夹
+destDir = r'D:\pic\切分'  # 处理后的图片存放位置
+
+
+def Thresholding(imgName, colorflag):  # 二值化，取出想要的文字部分
+    imgPath = fromDir + '\\' + imgName
+    img = Image.open(imgPath)
+    imgArray = img.load()
+    x, y = img.size
+    if colorflag == 'redWanted':
+        for i in range(y):
+            for j in range(x):
+                if (imgArray[j, i][0] > 200 and imgArray[j, i][1] < 110 and imgArray[j, i][2] < 100
+                        and (imgArray[j, i][2] + imgArray[j, i][1]) < imgArray[j,i][0]):
+                    img.putpixel((j, i), (0, 0, 0, 0))
+                else:
+                    img.putpixel((j, i), (255, 255, 255, 255))
+
+    elif colorflag == 'blueWanted':
+        for i in range(y):
+            for j in range(x):
+                if (imgArray[j, i][0] < 100 and imgArray[j, i][1] < 100 and imgArray[j, i][2] > 200 and (
+                        imgArray[j, i][0] + imgArray[j, i][1]) < imgArray[j, i][2]):
+                    img.putpixel((j, i), (0, 0, 0, 0))
+                else:
+                    img.putpixel((j, i), (255, 255, 255, 255))
+
+    elif colorflag == 'yellowWanted':
+        for i in range(y):
+            for j in range(x):
+                if (imgArray[j, i][0]
+                        > 200 and imgArray[j, i][1] > 200 and imgArray[j, i][2] < 110):
+                    img.putpixel((j, i), (0, 0, 0, 0))
+                else:
+                    img.putpixel((j, i), (255, 255, 255, 255))
+
+    elif colorflag == 'allWanted':  # 暂时不用
+        pass
+
+    return img
+
 
 def Denoise(img):   #input: gray image去除噪点
-    img_array = img.load()
+    imgArray = img.load()
     w, h = img.size
     for i in range(1, h-1):
         for j in range(1, w-1):
             count = 0
-            if (img_array[j,i-1][0] == 255 and img_array[j,i-1][1] == 255 and img_array[j,i-1][2] == 255):
+            if  (imgArray[j,i-1][0] == 255 and imgArray[j,i-1][1] == 255 and imgArray[j,i-1][2] == 255):
                 count = count + 1
-            if (img_array[j,i+1][0] == 255 and img_array[j,i+1][1]==255 and img_array[j,i+1][2]==255):
+            if (imgArray[j,i+1][0] == 255 and imgArray[j,i+1][1]==255 and imgArray[j,i+1][2]==255):
                 count = count + 1
-            if (img_array[j-1,i][0]==255 and img_array[j-1,i][1]==255 and img_array[j-1,i][2]==255):
+            if (imgArray[j-1,i][0]==255 and imgArray[j-1,i][1]==255 and imgArray[j-1,i][2]==255):
                 count = count + 1
-            if  (img_array[j+1,i][0]==255 and img_array[j+1,i][1]==255 and img_array[j+1,i][2]==255):
+            if  (imgArray[j+1,i][0]==255 and imgArray[j+1,i][1]==255 and imgArray[j+1,i][2]==255):
                 count = count + 1
-            if (img_array[j+1,i+1][0]==255 and img_array[j+1,i+1][1]==255 and img_array[j+1,i+1][2]==255):
+            if (imgArray[j+1,i+1][0]==255 and imgArray[j+1,i+1][1]==255 and imgArray[j+1,i+1][2]==255):
                 count = count + 1
-            if (img_array[j+1,i-1][0]==255 and img_array[j+1,i-1][1]==255 and img_array[j+1,i-1][2]==255):
+            if (imgArray[j+1,i-1][0]==255 and imgArray[j+1,i-1][1]==255 and imgArray[j+1,i-1][2]==255):
                 count = count + 1
-            if (img_array[j-1,i-1][0]==255 and img_array[j-1,i-1][1]==255 and img_array[j-1,i-1][2]==255):
+            if (imgArray[j-1,i-1][0]==255 and imgArray[j-1,i-1][1]==255 and imgArray[j-1,i-1][2]==255):
                 count = count + 1
-            if (img_array[j-1,i+1][0]==255 and img_array[j-1,i+1][1]==255 and img_array[j-1,i+1][2]==255):
+            if (imgArray[j-1,i+1][0]==255 and imgArray[j-1,i+1][1]==255 and imgArray[j-1,i+1][2]==255):
                 count = count + 1
 
             if count > 6:
@@ -119,25 +159,27 @@ def Cut(img, filename):
         new_image.save(saveDir)
 
 
-def Thresholding(imgName):  # 二值化，取出接近红色的部分
-    imgPath = fromDir + '\\' + imgName
-    img = Image.open(imgPath)
-    imgArray = img.load()
-    x, y = img.size
-    for i in range(y):
-        for j in range(x):
-            if (imgArray[j, i][0] > 200 and imgArray[j, i][1] < 110 and imgArray[j, i][2] < 100
-                    and (imgArray[j, i][2] + imgArray[j, i][1]) < imgArray[j,i][0]):
-                img.putpixel((j, i), (0, 0, 0, 0))
-            else:
-                img.putpixel((j, i), (255, 255, 255, 255))
-    return img
+def whatyYouWant(filename):
+    if '红色' in str(filename):
+        colorflag = 'redWanted'
+    elif '蓝色' in str(filename):
+        colorflag = 'blueWanted'
+    elif '黄色' in str(filename):
+        colorflag = 'yellowWanted'
+    else:
+        colorflag = 'allWanted'
+    return colorflag
 
 
-for filename in os.listdir(fromDir):  # 取出原图片
+def imgPreProcess(CAPTCHAFileImgName):
+        colorflag = whatyYouWant(CAPTCHAFileImgName)
+        img = Thresholding(CAPTCHAFileImgName, colorflag)  #先将需要识别与不需要识别的字符二值化
+        img = Denoise(img)  #去噪点
+        print(CAPTCHAFileImgName)
 
-    img = Thresholding(filename)
-    img = Denoise(img)
-    print(filename)
-    Cut(img, filename)
-    print(filename, 'Done')
+        Cut(img, CAPTCHAFileImgName)
+        print(CAPTCHAFileImgName, 'Done')
+
+
+if __name__ == '__main__':
+    pass

@@ -33,10 +33,10 @@ tranforms_test = transforms.Compose([
     transforms.ToTensor(),
 
 ])
-train_dataset = torchvision.datasets.ImageFolder("../PIC/预处理", transform=tranforms_train)
+train_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\预处理", transform=tranforms_train)
 train_data = DataLoader(train_dataset, batch_size=8, shuffle=True)
 
-test_dataset = torchvision.datasets.ImageFolder("../PIC/测试", transform=tranforms_test)
+test_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\测试", transform=tranforms_test)
 test_data = DataLoader(test_dataset, batch_size=8, shuffle=True)
 
 
@@ -132,5 +132,5 @@ for data in test_data:
                 print("结果："+str(predicted)+" 标签："+str(labels))
 
 print('识别准确率为：%d%%' % (100 * correct / total))
-torch.save(model,"D:/Code/PIC/model/" + str(100 * correct / total).replace('tensor', '') + "-net.pkl")  # 保存整个神经网络
+torch.save(model.state_dict(), "D:\Code\TaxPIC\model\\" + str(100 * correct / total).replace('tensor', '') + "-net.pkl")  # 保存整个神经网络
 print('训练总时间为: ', train_duration)
