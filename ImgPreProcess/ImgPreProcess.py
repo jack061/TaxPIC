@@ -41,13 +41,13 @@ def Thresholding(imgName, colorflag):  # 二值化，取出想要的文字部分
                 else:
                     img.putpixel((j, i), (255, 255, 255, 255))
 
-    elif colorflag == 'allWanted':  # 暂时不用
+    elif colorflag == 'allWanted':  # 暂时不用，因为找不到好的二值化方法
         pass
 
     return img
 
 
-def Denoise(img):   #input: gray image去除噪点
+def Denoise(img):   # 去除噪点
     imgArray = img.load()
     w, h = img.size
     for i in range(1, h-1):

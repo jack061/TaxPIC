@@ -18,7 +18,7 @@ def inputToGetPic(browser):
     inputKjje = browser.find_element_by_xpath('//*[@id="kjje"]')  # 校验码/金额都是这个xpath
     inputKjje.send_keys('123456')
 
-    time.sleep(0.2)  # 这时候就会出现校验码，然后就可以进行下载识别
+    time.sleep(0.5)  # 这时候就会出现校验码，然后就可以进行下载识别
 
     pageSource = browser.page_source
     bsObj = bs(pageSource, 'lxml')

@@ -16,30 +16,6 @@ import torch.optim as optim
 import timeit
 
 
-tranforms_train = transforms.Compose([
-
-    transforms.Grayscale(1),  # Convert image to grayscale.
-    transforms.RandomRotation((-15, 15)),
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-
-])
-
-tranforms_test = transforms.Compose([
-
-    transforms.Grayscale(1),  # Convert image to grayscale.
-    # transforms.RandomRotation((-15, 15)),
-    transforms.Resize((32, 32)),
-    transforms.ToTensor(),
-
-])
-train_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\预处理", transform=tranforms_train)
-train_data = DataLoader(train_dataset, batch_size=8, shuffle=True)
-
-test_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\测试", transform=tranforms_test)
-test_data = DataLoader(test_dataset, batch_size=8, shuffle=True)
-
-
 class Cap_Net(nn.Module):  # 搭建神经网络
 
     def __init__(self):
@@ -98,39 +74,68 @@ def train(train_loader):
         if (batch_idx + 1) % 10 == 0:
             print("loss:", loss.item())
 
+if __name__=='__main__':
 
-model = Cap_Net()  # 生成一个cnn
+    tranforms_train = transforms.Compose([
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-# device = torch.device("cuda:0" )
+    transforms.Grayscale(1),  # Convert image to grayscale.
+    transforms.RandomRotation((-15, 15)),
+    transforms.Resize((32, 32)),
+    transforms.ToTensor(),
 
-model = model.to(device)  # 确定走gpu还是cpu
-loss_f = nn.CrossEntropyLoss()
-optimizer = optim.SGD(model.parameters(), lr=2e-3, momentum=0.9)  # 确定优化函数
+    ])
 
-start_time = timeit.default_timer()
+    tranforms_test = transforms.Compose([
 
-for i in range(0, 100):
-    cur_epoch = i + 1
-    print("Epoch:", cur_epoch)
-    train(train_data)
+    transforms.Grayscale(1),  # Convert image to grayscale.
+    # transforms.RandomRotation((-15, 15)),
+    transforms.Resize((32, 32)),
+    transforms.ToTensor(),
 
-train_duration = timeit.default_timer() - start_time
+    ])
 
-correct = 0
-total = 0
+    train_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\预处理", transform=tranforms_train)
+    train_data = DataLoader(train_dataset, batch_size=8, shuffle=True)
 
-for data in test_data:
-                images, labels = data
-                images, labels = images.to(device), labels.to(device)
-                outputs = model(images)
-# 取得分最高的那个类
-                _, predicted = torch.max(outputs.data, 1)
-                total += labels.size(0)
-                correct += (predicted == labels).sum()
-                # if(predicted == labels):
-                print("结果："+str(predicted)+" 标签："+str(labels))
+    test_dataset = torchvision.datasets.ImageFolder("D:\Code\TaxPIC\PIC\测试", transform=tranforms_test)
+    test_data = DataLoader(test_dataset, batch_size=8, shuffle=True)
 
-print('识别准确率为：%d%%' % (100 * correct / total))
-torch.save(model.state_dict(), "D:\Code\TaxPIC\model\\" + str(100 * correct / total).replace('tensor', '') + "-net.pkl")  # 保存整个神经网络
-print('训练总时间为: ', train_duration)
+
+    model = Cap_Net()  # 生成一个cnn
+
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = torch.device("cuda:0" )
+
+    model = model.to(device)  # 确定走gpu还是cpu
+    loss_f = nn.CrossEntropyLoss()
+    optimizer = optim.SGD(model.parameters(), lr=2e-3, momentum=0.9)  # 确定优化函数
+
+    start_time = timeit.default_timer()
+
+    for i in range(0, 100):
+        cur_epoch = i + 1
+        print("Epoch:", cur_epoch)
+        train(train_data)
+
+    train_duration = timeit.default_timer() - start_time
+
+    correct = 0
+    total = 0
+
+    for data in test_data:
+                    images, labels = data
+                    images, labels = images.to(device), labels.to(device)
+                    outputs = model(images)
+    # 取得分最高的那个类
+                    _, predicted = torch.max(outputs.data, 1)
+                    total += labels.size(0)
+                    correct += (predicted == labels).sum()
+                    # if(predicted == labels):
+                    print("结果："+str(predicted)+" 标签："+str(labels))
+
+    print('识别准确率为：%d%%' % (100 * correct / total))
+    torch.save(model, "D:\Code\TaxPIC\model\\" + str(100 * correct / total).replace('tensor', '') + "-net.pkl")  # 保存整个神经网络
+
+    model = torch.load("D:\Code\TaxPIC\model\\" + str(100 * correct / total).replace('tensor', '') + "-net.pkl")
+    # print(model)
+    print('训练总时间为: ', train_duration)
