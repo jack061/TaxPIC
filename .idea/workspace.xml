@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0adbda2-5d64-424d-ab28-0198bca8d9b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PIC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PIC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/.ipynb_checkpoints/Cap-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/DownloadCAPTCHA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/DownloadCAPTCHA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/Identity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/blue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/color_change.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/cut.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/red.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test_yellow.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/total.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/yellow.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(59)-net.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(60)-net.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(62)-net.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(65)-net.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/model/(65)-net.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(69)-net.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/model/(69)-net.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(98)-net.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +39,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3186" />
+          <entry key="py" value="3303" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3186" />
+          <entry key="Python" value="3303" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,12 +79,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="-571">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding>
                 <element signature="e#9#21#0" expanded="true" />
                 <element signature="e#1543#2204#0" />
-                <element signature="e#2251#2765#0" />
               </folding>
             </state>
           </provider>
@@ -226,7 +200,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -408,7 +382,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49951172" visible="true" weight="0.3436255" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49951172" weight="0.3436255" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993964" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -486,12 +460,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="-571">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding>
             <element signature="e#9#21#0" expanded="true" />
             <element signature="e#1543#2204#0" />
-            <element signature="e#2251#2765#0" />
           </folding>
         </state>
       </provider>

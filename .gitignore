@@ -1,5 +1,6 @@
 /PIC
 /venv
-.idea
-ghostdriver.log
 /model
+/.idea
+ghostdriver.log
+

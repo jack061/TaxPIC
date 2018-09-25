@@ -21,20 +21,21 @@ from ImgPreProcess import *
 
 
 # 初始化一个selenium的webdriver传入，利用phantomjs，自动在当前页面填写发票信息，获取验证码图片信息
-def inputToGetPic(driver):
+def inputToGetPic(driver, fpInfo = None):
+    fpInfo = dict({'Fpdm':'033001700211','Fphm':'58089105','Kprq':'20180410','Kjje':'123456'})
 
     inputFpdm = driver.find_element_by_xpath('//*[@id="fpdm"]')
-    inputFpdm.send_keys('033001700211')
+    inputFpdm.send_keys(fpInfo['Fpdm'])
 
     inputFphm = driver.find_element_by_xpath('//*[@id="fphm"]')
-    inputFphm.send_keys('58089105')
+    inputFphm.send_keys(fpInfo['Fphm'])
 
     # 不输入以下两个值也能加载验证码,但是验证码会等待3秒左右才能加载
     inputKprq = driver.find_element_by_xpath('//*[@id="kprq"]')
-    inputKprq.send_keys('20180410')
+    inputKprq.send_keys(fpInfo['Kprq'])
 
     inputKjje = driver.find_element_by_xpath('//*[@id="kjje"]')  # 校验码/金额都是这个xpath
-    inputKjje.send_keys('123456')
+    inputKjje.send_keys(fpInfo['kjje'])
 
     time.sleep(0.5)  # 这时候就会出现校验码，然后就可以进行下载识别
 
