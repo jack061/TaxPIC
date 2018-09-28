@@ -123,10 +123,12 @@ if __name__=='__main__':
     total = 0
 
     for data in test_data:
+
                     images, labels = data
                     images, labels = images.to(device), labels.to(device)
                     outputs = model(images)
-    # 取得分最高的那个类
+                    
+                    # 取得分最高的那个类
                     _, predicted = torch.max(outputs.data, 1)
                     total += labels.size(0)
                     correct += (predicted == labels).sum()

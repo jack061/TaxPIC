@@ -6,7 +6,7 @@ import math
 
 
 fromDir = r'D:\pic'  # 存放原始图片文件的文件夹
-destDir = r'D:\pic\切分'  # 处理后的图片存放位置
+destDir = r'D:\pic\切分\1'  # 处理后的图片存放位置
 
 
 def Thresholding(imgName, colorflag):  # 二值化，取出想要的文字部分
@@ -151,9 +151,12 @@ def Cut(img, filename):
 
 
     for i in range(len(startEdge)):
+
         child_img = img.crop((startEdge[i], 0, endEdge[i], h - 1))  # 切割, crop函数带的参数为(起始点的横坐标，起始点的纵坐标，宽度，高度）
         child_img_list.append(child_img)
+
     for i in range(len(child_img_list)):  # 调整大小并保存
+
         new_image = child_img_list[i].resize((16, h), Image.BILINEAR)
         saveDir = destDir + '\\' + str(i) + filename
         new_image.save(saveDir)
@@ -172,13 +175,14 @@ def whatyYouWant(filename):
 
 
 def imgPreProcess(CAPTCHAFileImgName):
-        colorflag = whatyYouWant(CAPTCHAFileImgName)
-        img = Thresholding(CAPTCHAFileImgName, colorflag)  #先将需要识别与不需要识别的字符二值化
-        img = Denoise(img)  #去噪点
-        print(CAPTCHAFileImgName)
+    CAPTCHAFileImgName = CAPTCHAFileImgName
+    colorflag = whatyYouWant(CAPTCHAFileImgName)
+    img = Thresholding(CAPTCHAFileImgName, colorflag)  #先将需要识别与不需要识别的字符二值化
+    img = Denoise(img)  #去噪点
+    print(CAPTCHAFileImgName)
 
-        Cut(img, CAPTCHAFileImgName)
-        print(CAPTCHAFileImgName, 'Done')
+    Cut(img, CAPTCHAFileImgName)
+    print(CAPTCHAFileImgName, 'Done')
 
 
 if __name__ == '__main__':

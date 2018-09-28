@@ -1,6 +1,8 @@
 /PIC
 /venv
 /model
-.idea
+/.idea/*
 ghostdriver.log
+/test
 
+.idea/workspace.xml
