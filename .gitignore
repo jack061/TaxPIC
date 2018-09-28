@@ -1,7 +1,16 @@
 /PIC
 /venv
 <<<<<<< HEAD
+<<<<<<< HEAD
 .idea
 =======
 /.idea/*
 >>>>>>> parent of 8d9b950... 0905
+=======
+/model
+/.idea/*
+ghostdriver.log
+/test
+
+.idea/workspace.xml
+>>>>>>> 日常

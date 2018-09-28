@@ -117,7 +117,7 @@ for filename in os.listdir(r'C:\Users\邹盛\Desktop\验证码\蓝色'): #listdi
  for i in range(y):
     for j in range(x):
         if (img_array[j,i][0]<100 and img_array[j,i][1]<100 and img_array[j,i][2]>200 and (img_array[j,i][0]+img_array[j,i][1])<img_array[j,i][2]):
-            img.putpixel((j, i), (0, 0, 0, 255))#黑
+            img.putpixel((j, i), (0, 0, 0, 255))#变黑
         else:
             img.putpixel((j, i), (255, 255, 255,255))#白
  img=depoint(img)
