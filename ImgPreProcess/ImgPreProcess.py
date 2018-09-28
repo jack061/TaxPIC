@@ -149,7 +149,7 @@ def Cut(img, filename):
     startEdge = tmp1
     endEdge = tmp2
 
-
+    # 切分图片并保存
     for i in range(len(startEdge)):
 
         child_img = img.crop((startEdge[i], 0, endEdge[i], h - 1))  # 切割, crop函数带的参数为(起始点的横坐标，起始点的纵坐标，宽度，高度）
@@ -182,6 +182,8 @@ def imgPreProcess(CAPTCHAFileImgName):
     print(CAPTCHAFileImgName)
 
     Cut(img, CAPTCHAFileImgName)
+    os.remove((fromDir + '\\' + CAPTCHAFileImgName))
+
     print(CAPTCHAFileImgName, 'Done')
 
 

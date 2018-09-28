@@ -15,10 +15,6 @@ import base64
 import re
 import os
 
-import matplotlib.pyplot as plt # plt 用于显示图片
-import matplotlib.image as mpimg # mpimg 用于读取图片
-
-
 from ImgPreProcess import *
 
 
@@ -93,25 +89,6 @@ class Cap_Net(nn.Module):  # pytorch的bug，自定义class保存后，如果在
         return x
 
 
-def find_classes(dataset_dir):  
-    # pytorch的DatasetFolder方法在读取数据集文件时会对标签做索引以输入网络
-    # 我们需要根据索引找到其对应的label，这里对原数据集文件做反向的“索引：标签”映射，便于后续查找
-    classes = [d for d in os.listdir(dataset_dir) if os.path.isdir(os.path.join(dataset_dir, d))]
-    classes.sort()
-    idx_to_classes = {i: classes[i] for i in range(len(classes))}
-    return idx_to_classes
-
-
-def parseResult(result, idx_to_class):
-    p1 = re.compile(r'[[](.*?)[]]', re.S)  #最小匹配
-    results = re.findall(p1, result)
-    results = results[0].split(',')
-    r = []
-    for i in results:
-        r.append(idx_to_class[int(i)])
-    return  r
-
-
 def identity(networkPath, ImageFolder):
     net = Cap_Net()  # 初始化
 
@@ -141,15 +118,36 @@ def identity(networkPath, ImageFolder):
     return ("结果：" + result)
 
 
-if __name__ == '__main__':
+def find_classes(dataset_dir):  
+    # pytorch的DatasetFolder方法在读取数据集文件时会对标签做索引以输入网络
+    # 我们需要根据索引找到其对应的label，这里对原数据集文件做反向的“索引：标签”映射，便于后续查找
+    classes = [d for d in os.listdir(dataset_dir) if os.path.isdir(os.path.join(dataset_dir, d))]
+    classes.sort()
+    idx_to_classes = {i: classes[i] for i in range(len(classes))}
+    return idx_to_classes
+
+
+def parseResult(result, idx_to_class):
+    p1 = re.compile(r'[[](.*?)[]]', re.S)  #最小匹配
+    results = re.findall(p1, result)
+    results = results[0].split(',')
+    r = []
+    for i in results:
+        r.append(idx_to_class[int(i)])
+    return  r
+
+
+def main(networkPath = None, ImageFolder = None, dataset_dir = None):
     
+    networkPath = r'D:\Code\TaxPIC\model\(69)-net.pkl'
+    ImageFolder = r'D:\pic\切分'  # 切分后的图片的存放地址 
     dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
 
-    driver = webdriver.PhantomJS(executable_path=r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe')
+    # driver = webdriver.PhantomJS(executable_path=r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe')
 
     # 调试时用可视化的chrome webdriver或者edge webdriver
-    # browser = webdriver.Edge(executable_path='D:/webdrivers/MicrosoftWebDriver.exe')
-    # browser = webdriver.Chrome(executable_path='D:/webdrivers/chromedriver.exe')
+    # driver = webdriver.Edge(executable_path='D:/webdrivers/MicrosoftWebDriver.exe')
+    driver = webdriver.Chrome(executable_path =r'D:/webdrivers/chromedriver.exe')
 
     driver.get("https://inv-veri.chinatax.gov.cn/")  # Load page
     imgdata, filename = inputToGetPic(driver)
@@ -163,11 +161,29 @@ if __name__ == '__main__':
     imgPreProcess(filename)
 
 
-    networkPath = r'D:\Code\TaxPIC\model\(69)-net.pkl'
-    ImageFolder = r'D:\pic\切分'
     result = identity(networkPath, ImageFolder)
     idx_to_classes = find_classes(dataset_dir)
-    result = (parseResult(result,idx_to_classes))
+    result =''.join(parseResult(result,idx_to_classes))
     print(result)
 
-    driver.close()
+    yzm = driver.find_element_by_xpath('//*[@id="yzm"]')
+    yzm.send_keys(result)
+    # 验证码识别成功后就进行填写提交，获取查验信息
+    clickCheckButton = driver.find_element_by_xpath('//*[@id="checkfp"]')
+    clickCheckButton.click()
+
+    time.sleep(1)
+    
+    checkSuccessFlag = driver.find_element_by_xpath('//*[@id="cms_r"]/div/div[2]')
+    if !checkSuccessFlag:
+        # 如果没有弹出查验成功窗口，刷新页面
+        result= main()
+
+
+    print(driver.page_source)
+
+    # driver.close()
+
+if __name__ == '__main__':
+    main()
+   
