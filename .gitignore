@@ -2,7 +2,7 @@
 /venv
 <<<<<<< HEAD
 <<<<<<< HEAD
-.idea
+.idea/
 =======
 /.idea/*
 >>>>>>> parent of 8d9b950... 0905
@@ -13,3 +13,10 @@ ghostdriver.log
 /test
 .idea/workspace.xml
 >>>>>>> 日常
+debug.log
+.idea/misc.xml
+.idea/modules.xml
+.idea/PIC.iml
+.idea/vcs.xml
+.idea/workspace.xml
+ImgPreProcess/__pycache__/

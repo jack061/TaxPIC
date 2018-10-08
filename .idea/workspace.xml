@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0adbda2-5d64-424d-ab28-0198bca8d9b9" name="Default" comment="">
+    <list default="true" id="01a4be50-9dae-4c92-b98b-fbb8b289ffdb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/PIC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PIC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PIC.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/blue.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/blue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/red.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/red.py" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImgPreProcess/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetWork/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/(69)-net.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/model/(69)-net.pkl" afterDir="false" />
->>>>>>> 日常
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,243 +17,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-<<<<<<< HEAD
-=======
-    <SUITE FILE_PATH="coverage/TaxPIC$testIdentity.coverage" NAME="testIdentity Coverage Results" MODIFIED="1538037263419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/TaxPIC$main.coverage" NAME="main Coverage Results" MODIFIED="1538037991349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
->>>>>>> 日常
-    <SUITE FILE_PATH="coverage/PIC$network.coverage" NAME="network Coverage Results" MODIFIED="1531100647928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NetWork" />
-    <SUITE FILE_PATH="coverage/TaxPIC$DownloadCAPTCHA.coverage" NAME="DownloadCAPTCHA Coverage Results" MODIFIED="1537425365382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/PIC$train.coverage" NAME="train Coverage Results" MODIFIED="1530001698220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/PIC$test.coverage" NAME="test Coverage Results" MODIFIED="1530777688671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TaxPIC$red.coverage" NAME="red Coverage Results" MODIFIED="1535963968639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-=======
-    <SUITE FILE_PATH="coverage/TaxPIC$Identity.coverage" NAME="Identity Coverage Results" MODIFIED="1537436838626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/TaxPIC$total.coverage" NAME="total Coverage Results" MODIFIED="1537437537275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/TaxPIC$InputNDownload.coverage" NAME="InputNDownload Coverage Results" MODIFIED="1536739998840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/PIC$test.coverage" NAME="test Coverage Results" MODIFIED="1530777688671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TaxPIC$red.coverage" NAME="red Coverage Results" MODIFIED="1536216364018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/TaxPIC$cutnidentity.coverage" NAME="cutnidentity Coverage Results" MODIFIED="1536225108202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/TaxPIC$network.coverage" NAME="network Coverage Results" MODIFIED="1538038013414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
->>>>>>> 日常
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="747137575">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-<<<<<<< HEAD
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
-=======
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="6" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="12" />
->>>>>>> 日常
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-<<<<<<< HEAD
-          <entry key="py" value="92" />
-=======
-          <entry key="py" value="3503" />
->>>>>>> 日常
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-<<<<<<< HEAD
-          <entry key="Python" value="92" />
-=======
-          <entry key="Python" value="3503" />
->>>>>>> 日常
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-<<<<<<< HEAD
           <entry key="py" value="1" />
-=======
-          <entry key="log" value="1" />
-          <entry key="py" value="42" />
->>>>>>> 日常
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-<<<<<<< HEAD
           <entry key="Python" value="1" />
-=======
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="42" />
->>>>>>> 日常
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/NetWork/network.py">
-=======
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py">
->>>>>>> 日常
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4350">
-              <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
-              <folding>
-                <element signature="e#23#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/test5.py">
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/main.py">
->>>>>>> 日常
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="138" column="27" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/color_change.py">
-=======
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/network.py">
->>>>>>> 日常
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2150">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/red.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
-=======
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torchvision/datasets/folder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/testIdentity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
->>>>>>> 日常
-              <folding>
-                <element signature="e#9#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/blue.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="46" column="9" selection-start-line="41" selection-start-column="3" selection-end-line="46" selection-end-column="9" />
-=======
-        <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torch/utils/data/dataloader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10600">
-              <caret line="439" column="48" selection-start-line="439" selection-start-column="48" selection-end-line="439" selection-end-column="48" />
->>>>>>> 日常
+            <state relative-caret-position="500">
+              <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Cap_net</find>
-      <find>CapNet</find>
-      <find>cur</find>
-      <find>train_data</find>
-      <find>line</find>
-      <find>cla</find>
-      <find>conv1_1</find>
-      <find>h</find>
-      <find>f2</find>
-      <find>filename</find>
-      <find>·</find>
-      <find>fromdir</find>
-      <find>tranforms_test</find>
-      <find>cap_net</find>
-      <find>DatasetFolder</find>
-      <find>label</find>
-      <find>imgPreProcess</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/train.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/NetWork/network.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/yellow.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/cut.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/blue.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/red.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/test2.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/test4.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/base64topic.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/etst.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/cutnidentity.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/InputNDownload.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/DownloadCAPTCHA.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/Identity.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/network.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/total.py" />
-        <option value="$USER_HOME$/Miniconda3/Lib/site-packages/torchvision/datasets/folder.py" />
-        <option value="$PROJECT_DIR$/test/testIdentity.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/main.py" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -268,12 +60,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="232" />
-    <option name="y" value="16" />
+    <option name="x" value="230" />
+    <option name="y" value="15" />
     <option name="width" value="1300" />
     <option name="height" value="1400" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -291,23 +82,6 @@
               <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
               <item name="ImgPreProcess" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< HEAD
-=======
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
->>>>>>> 日常
           </expand>
           <select />
         </subPane>
@@ -316,21 +90,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Code/TaxPIC/ImgPreProcess/cutnidentity.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings module-name="PIC" is-module-sdk="true" working-directory="$PROJECT_DIR$">
-        <option name="myUseModuleSdk" value="true" />
-        <option name="myModuleName" value="PIC" />
-        <option name="myWorkingDirectory" value="$PROJECT_DIR$" />
-      </console-settings>
-    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -344,239 +107,44 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Python.red">
-=======
-  <component name="RunManager" selected="Python.network">
-    <configuration name="Identity" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/Identity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
->>>>>>> 日常
-    <configuration name="network" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/network.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-<<<<<<< HEAD
-    </configuration>
-    <configuration name="red" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/red.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-=======
->>>>>>> 日常
-    </configuration>
-    <configuration name="testIdentity" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testIdentity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="total" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/total.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.total" />
-      <item itemvalue="Python.network" />
-<<<<<<< HEAD
-      <item itemvalue="Python.red" />
-=======
-      <item itemvalue="Python.Identity" />
-      <item itemvalue="Python.testIdentity" />
->>>>>>> 日常
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.red" />
-        <item itemvalue="Python.network" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.testIdentity" />
-        <item itemvalue="Python.total" />
-        <item itemvalue="Python.Identity" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a0adbda2-5d64-424d-ab28-0198bca8d9b9" name="Default" comment="" />
-      <created>1530001415120</created>
+      <changelist id="01a4be50-9dae-4c92-b98b-fbb8b289ffdb" name="Default Changelist" comment="" />
+      <created>1538978455093</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1530001415120</updated>
+      <updated>1538978455093</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <frame x="-7" y="-7" width="2062" height="1136" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25774226" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24975075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32973504" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49951172" weight="0.34607646" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994112" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32973504" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004883" side_tool="true" weight="0.34641805" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-=======
-    <frame x="-7" y="-7" width="2062" height="1136" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12662014" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.3993964" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.32997987" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32973504" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5004883" side_tool="true" weight="0.34561753" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32997987" />
->>>>>>> 日常
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-<<<<<<< HEAD
-=======
-      <window_info anchor="right" id="Run" order="5" sideWeight="0.49951172" weight="0.4441675" />
->>>>>>> 日常
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,130 +153,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/torch/nn/modules/module.py" />
-    <entry file="file://$PROJECT_DIR$/wode.py" />
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/train.py" />
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/yellow.py">
-=======
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/blue.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/red.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test_yellow.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test2.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test4.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/geckodriver.log" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test6.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test5.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/yellow.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/etst.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test3.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/cutnidentity.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/InputNDownload.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/cut.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/base64topic.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/color_change.py" />
-    <entry file="file://$PROJECT_DIR$/NetWork/network.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/Identity.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/total.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/DownloadCAPTCHA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torch/utils/data/sampler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/796768418/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="4719" column="8" selection-start-line="4719" selection-start-column="8" selection-end-line="4719" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4350">
-          <caret line="177" column="25" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
-          <folding>
-            <element signature="e#23#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2150">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torchvision/datasets/folder.py">
->>>>>>> 日常
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/testIdentity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
-          <folding>
-            <element signature="e#9#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torch/utils/data/dataloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10600">
-          <caret line="439" column="48" selection-start-line="439" selection-start-column="48" selection-end-line="439" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/blue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="46" column="9" selection-start-line="41" selection-start-column="3" selection-end-line="46" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/red.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="88" column="38" lean-forward="true" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
-          <folding>
-            <element signature="e#16#37#0" expanded="true" />
-          </folding>
-=======
-        <state relative-caret-position="555">
-          <caret line="138" column="27" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="27" />
->>>>>>> 日常
+        <state relative-caret-position="500">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
         </state>
       </provider>
     </entry>

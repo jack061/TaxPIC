@@ -11,17 +11,21 @@ from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 import time
 import base64
+from lxml import etree
 
 import re
 import os
 
+import shutil
 from ImgPreProcess import *
 
 
 # 初始化一个selenium的webdriver传入，利用phantomjs，自动在当前页面填写发票信息，获取验证码图片信息
 def inputToGetPic(driver, fpInfo = None):
     
-    fpInfo = dict({'fpdm':'033001700211','fphm':'58089105','kprq':'20180410','kjje':'123456'})
+    if not fpInfo:
+        fpInfo = dict({'fpdm':'044031700111','fphm':'28477743',
+                    'kprq':'20171129','kjje':'227858'})
 
     inputFpdm = driver.find_element_by_xpath('//*[@id="fpdm"]')
     inputFpdm.send_keys(fpInfo['fpdm'])
@@ -36,7 +40,7 @@ def inputToGetPic(driver, fpInfo = None):
     inputKjje = driver.find_element_by_xpath('//*[@id="kjje"]')  # 校验码/金额都是这个xpath
     inputKjje.send_keys(fpInfo['kjje'])
 
-    time.sleep(0.5)  # 这时候就会出现校验码，然后就可以进行下载识别
+    time.sleep(3)  # 这时候就会出现校验码，然后就可以进行下载识别
 
     pageSource = driver.page_source
     bsObj = bs(pageSource, 'lxml')
@@ -114,8 +118,8 @@ def identity(networkPath, ImageFolder):
         _, predicted = torch.max(outputs.data, 1)
 
         result = result + str(predicted)
-
-    return ("结果：" + result)
+    
+    return ("结果： " + result)
 
 
 def find_classes(dataset_dir):  
@@ -137,19 +141,15 @@ def parseResult(result, idx_to_class):
     return  r
 
 
-def main(networkPath = None, ImageFolder = None, dataset_dir = None):
+def main(driver, networkPath = None, ImageFolder = None, dataset_dir = None):
     
-    networkPath = r'D:\Code\TaxPIC\model\(69)-net.pkl'
-    ImageFolder = r'D:\pic\切分'  # 切分后的图片的存放地址 
-    dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
+    if  os.path.exists("D:\pic\切分\\1"):
+        shutil.rmtree("D:\pic\切分\\1")
 
-    # driver = webdriver.PhantomJS(executable_path=r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe')
+    # networkPath = r'D:\Code\TaxPIC\model\(69)-net.pkl'
+    # ImageFolder = r'D:\pic\切分'  # 切分后的图片的存放地址 
+    # dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
 
-    # 调试时用可视化的chrome webdriver或者edge webdriver
-    # driver = webdriver.Edge(executable_path='D:/webdrivers/MicrosoftWebDriver.exe')
-    driver = webdriver.Chrome(executable_path =r'D:/webdrivers/chromedriver.exe')
-
-    driver.get("https://inv-veri.chinatax.gov.cn/")  # Load page
     imgdata, filename = inputToGetPic(driver)
 
     while filename == '请输入验证码文字.png':  # 跳过要输入图中所有文字的验证码，因为找不到好的方法二值化
@@ -164,7 +164,7 @@ def main(networkPath = None, ImageFolder = None, dataset_dir = None):
     result = identity(networkPath, ImageFolder)
     idx_to_classes = find_classes(dataset_dir)
     result =''.join(parseResult(result,idx_to_classes))
-    print(result)
+    print('验证码'+ result)
 
     yzm = driver.find_element_by_xpath('//*[@id="yzm"]')
     yzm.send_keys(result)
@@ -172,18 +172,45 @@ def main(networkPath = None, ImageFolder = None, dataset_dir = None):
     clickCheckButton = driver.find_element_by_xpath('//*[@id="checkfp"]')
     clickCheckButton.click()
 
-    time.sleep(1)
-    
-    checkSuccessFlag = driver.find_element_by_xpath('//*[@id="cms_r"]/div/div[2]')
-    if !checkSuccessFlag:
-        # 如果没有弹出查验成功窗口，刷新页面
-        result= main()
+    time.sleep(10)
 
-
-    print(driver.page_source)
-
+    return driver
     # driver.close()
 
 if __name__ == '__main__':
-    main()
-   
+
+    total = 0
+    wrong = 0
+
+    networkPath = 'D:\Code\TaxPIC\model\(69)-net.pkl'
+    ImageFolder = 'D:\pic\切分'  # 切分后的图片的存放地址 
+    dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
+
+    # driver = webdriver.PhantomJS(executable_path=r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe')
+
+    # 调试时用可视化的chrome webdriver或者edge webdriver
+    # driver = webdriver.Edge(executable_path='D:/webdrivers/MicrosoftWebDriver.exe')
+    driver = webdriver.Chrome(executable_path =r'D:/webdrivers/chromedriver.exe')
+    
+    
+    driver.get("https://inv-veri.chinatax.gov.cn/")  # Load page
+    driver = main(driver, networkPath, ImageFolder, dataset_dir)
+    total = total + 1
+    
+    selector = etree.HTML(driver.page_source)
+    flag = selector.xpath('//*[@id="cyjg"]')
+    print(flag)
+
+    while not flag:
+        wrong = wrong + 1
+        # driver.find_element_by_xpath('//*[@id="cyjg"]')   
+        # 如果没有弹出查验成功窗口，刷新页面
+        driver.refresh()
+        driver = main(driver, networkPath, ImageFolder, dataset_dir)
+        total = total + 1
+
+        selector = etree.HTML(driver.page_source)
+        flag = selector.xpath('//*[@id="cyjg"]')
+        print(flag)
+    
+    print('正确率: ' + float((wrong/total)*100) + '%')   

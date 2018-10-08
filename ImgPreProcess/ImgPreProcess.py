@@ -5,11 +5,18 @@ import os
 import math
 
 
-fromDir = r'D:\pic'  # 存放原始图片文件的文件夹
-destDir = r'D:\pic\切分\1'  # 处理后的图片存放位置
+fromDir = r'D:\\pic'  # 存放原始图片文件的文件夹
+destDir = r'D:\\pic\\切分\\1'  # 处理后的图片存放位置
 
 
 def Thresholding(imgName, colorflag):  # 二值化，取出想要的文字部分
+    
+    if not os.path.exists(fromDir):
+        os.makedirs(fromDir)  
+        
+    if not os.path.exists(destDir):
+        os.makedirs(destDir) 
+
     imgPath = fromDir + '\\' + imgName
     img = Image.open(imgPath)
     imgArray = img.load()
@@ -179,7 +186,7 @@ def imgPreProcess(CAPTCHAFileImgName):
     colorflag = whatyYouWant(CAPTCHAFileImgName)
     img = Thresholding(CAPTCHAFileImgName, colorflag)  #先将需要识别与不需要识别的字符二值化
     img = Denoise(img)  #去噪点
-    print(CAPTCHAFileImgName)
+    # print(CAPTCHAFileImgName)
 
     Cut(img, CAPTCHAFileImgName)
     os.remove((fromDir + '\\' + CAPTCHAFileImgName))
