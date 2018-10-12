@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html xmlns:ng="https://angularjs.org" id="ng-app" ng-app="job_app" lang="zh">
+<html>
+  <head>
+    <title>asdfasdfasdf</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	  
+      <script src="index.js"></script>
+
+
+
+
+  </head>
+
+  <body>
+    
+
+
+
+  </body>
+    <!-- 你的html代码 -->
+
+        
+
+
+
+
+    <script>
+
+       fplx = '10'
+       fpdm = '033001700211'
+       fphm = '17403387'
+       swjgmc = '我的税务局'
+       yzmSj = '2088/22/33 12:11:22'
+       jsonData = {
+           "key1":"001",
+           "key2":"8¡Ô20170227¡Ô±±¾©Âóµ±ÀÍÊ³Æ·ÓÐÏÞ¹«Ë¾¡Ô911100006000045237¡Ô±±¾©ÊÐ¶«³ÇÇøÍõ¸®¾®´ó½Ö138ºÅ1ºÅÂ¥11²ã1101-1119 010-65281188¡ÔÖÐ¹ú¹¤ÉÌÒøÐÐ¹É·ÝÓÐÏÞ¹«Ë¾±±¾©ºÍÆ½ÀïÖ§ÐÐ 0200004209014442920¡ÔÀîÖ¾ÃÍ¡Ô ¡Ô ¡Ô ¡Ô80277307171217590604¡Ô2.38¡Ô42¡Ô¡Ô661616252159¡Ô39.62¡ÔN",
+           "key3":"²ÍÒû·þÎñ¨€ ¨€ ¨€6¨€39.62¨€39.62¨€1¨€2.38",
+           "key4":" ",
+           "key5":"1"}
+
+       //('011001600111','32212718','20170227','80277307171217590604'
+       fpdm = '011001600111'
+       fphm = '32212718'
+       jsonData = {
+           key1: "001",
+           key2: "9≡20170227≡北京麦当劳食品有限公司≡911100006000045237≡北京市东城区王府井大街138号1号楼11层1101-1119 010-65281188≡中国工商银行股份有限公司北京和平里支行 0200004209014442920≡李志猛≡ ≡ ≡ ≡80277307171217590604≡2.38≡42≡≡661616252159≡39.62≡N",
+           key3: "餐饮服务█ █ █6█39.62█39.62█1█2.38",
+           key4: " ",
+           key5: "1"
+       }
+
+
+       show_yzm = "";
+        var key5 = jsonData.key5;
+        var hwxx = jsonData.key3;
+        var key2 = jsonData.key2;
+        var bz = jsonData.key4.trim();
+        if (key5 != "1") {
+            var signflag = $.vsign(fplx, fpdm, jsonData.key2, key5);
+            if (signflag) {
+                key2 = $.endetail(fplx, fpdm, $.deinv(fplx, fpdm, jsonData.key2));
+                hwxx = $.deinvkey(fplx, fpdm, jsonData.key3);
+                bz = $.deinvrm(fplx, fpdm, bz)
+            } else {
+                jAlert("系统异常，请重试！(07)", "系统错误");
+                //return
+            }
+        }
+       show_data = fpdm + '≡' + fphm + '≡' + swjgmc + '≡' + key2 + '≡' + yzmSj + '≡≡≡HWXX≡≡≡' + hwxx + '≡≡≡HWXX≡≡≡' + bz
+       browser = 'xxx'
+        if (browser == "edge" || browser == "firefox") {
+            show_dialog(1100, 700, "cyjgedge" + fplx + ".html", fpdm + '≡' + fphm + '≡' + swjgmc + '≡' + key2 + '≡' + yzmSj + '≡≡≡HWXX≡≡≡' + hwxx + '≡≡≡HWXX≡≡≡' + bz)
+        } else if (browser == "ie8") {
+            sessionStorage["browser"] = "ie8";
+            var str = JSON.stringify(fpdm + '≡' + fphm + '≡' + swjgmc + '≡' + key2 + '≡' + yzmSj + '≡≡≡HWXX≡≡≡' + hwxx + '≡≡≡HWXX≡≡≡' + bz);
+            sessionStorage["result"] = str;
+            show_dialog(1100, 700, "cyjgedge" + fplx + ".html", fpdm + '≡' + fphm + '≡' + swjgmc + '≡' + key2 + '≡' + yzmSj + '≡≡≡HWXX≡≡≡' + hwxx + '≡≡≡HWXX≡≡≡' + bz)
+        } else {
+            //window.showModalDialog('cyjg' + fplx + '.html', fpdm + '≡' + fphm + '≡' + swjgmc + '≡' + key2 + '≡' + yzmSj + '≡≡≡HWXX≡≡≡' + hwxx + '≡≡≡HWXX≡≡≡' + bz, "dialogTop:10px;dialogWidth:1100px;dialogHeight:700px;")
+            alert(show_data)
+        }
+
+
+        
+    </script>
+
+
+
+</html>

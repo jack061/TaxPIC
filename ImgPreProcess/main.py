@@ -12,20 +12,32 @@ from selenium import webdriver
 import time
 import base64
 from lxml import etree
-
 import re
 import os
+from random import choice
 
 import shutil
 from ImgPreProcess import *
 
+errormessage = {
+    '验证码请求次数过于频繁，请1分钟后再试！':0,
+    '验证码错误!':1,
+}
 
 # 初始化一个selenium的webdriver传入，利用phantomjs，自动在当前页面填写发票信息，获取验证码图片信息
+# 验证码URL： https://fpcy.szgs.gov.cn/WebQuery/yzmQuery?callback=jQuery1102077129486062673_1538982596672&fpdm=044031700111&fphm=28477743&r=0.7576049859494576&v=V1.0.06_001&nowtime=1539049984487&area=4403&publickey=21BC9BFA288CF801B66C26801BF16E5E&_=1538982596677
+# baseURL是根据发票的税务机关，产生不同的，后面的结构都一样
 def inputToGetPic(driver, fpInfo = None):
-    
-    if not fpInfo:
-        fpInfo = dict({'fpdm':'044031700111','fphm':'28477743',
-                    'kprq':'20171129','kjje':'227858'})
+
+    fpinfo = [
+        {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'},
+        {'fpdm': '033001700211', 'fphm': '58089105', 'kprq': '20180410', 'kjje': '604420'},
+        {'fpdm': '033001700211', 'fphm': '17099263', 'kprq': '20171201', 'kjje': '336134'},
+        {'fpdm': '044031700111', 'fphm': '28478760', 'kprq': '20171129', 'kjje': '737421'},
+    ]
+
+    if fpInfo is None:
+        fpInfo = fpinfo[0]
 
     inputFpdm = driver.find_element_by_xpath('//*[@id="fpdm"]')
     inputFpdm.send_keys(fpInfo['fpdm'])
@@ -33,14 +45,15 @@ def inputToGetPic(driver, fpInfo = None):
     inputFphm = driver.find_element_by_xpath('//*[@id="fphm"]')
     inputFphm.send_keys(fpInfo['fphm'])
 
-    # 不输入以下两个值也能加载验证码,但是验证码会等待3秒左右才能加载
+    # 不输入以下两个值也能加载验证码,但是验证码会多等待3秒左右才能加载
     inputKprq = driver.find_element_by_xpath('//*[@id="kprq"]')
     inputKprq.send_keys(fpInfo['kprq'])
 
-    inputKjje = driver.find_element_by_xpath('//*[@id="kjje"]')  # 校验码/金额都是这个xpath
+    # 校验码/金额都是这个xpath
+    inputKjje = driver.find_element_by_xpath('//*[@id="kjje"]')
     inputKjje.send_keys(fpInfo['kjje'])
 
-    time.sleep(3)  # 这时候就会出现校验码，然后就可以进行下载识别
+    time.sleep(6)  # 这时候就会出现校验码，然后就可以进行下载识别
 
     pageSource = driver.page_source
     bsObj = bs(pageSource, 'lxml')
@@ -118,11 +131,11 @@ def identity(networkPath, ImageFolder):
         _, predicted = torch.max(outputs.data, 1)
 
         result = result + str(predicted)
-    
+
     return ("结果： " + result)
 
 
-def find_classes(dataset_dir):  
+def find_classes(dataset_dir):
     # pytorch的DatasetFolder方法在读取数据集文件时会对标签做索引以输入网络
     # 我们需要根据索引找到其对应的label，这里对原数据集文件做反向的“索引：标签”映射，便于后续查找
     classes = [d for d in os.listdir(dataset_dir) if os.path.isdir(os.path.join(dataset_dir, d))]
@@ -140,14 +153,13 @@ def parseResult(result, idx_to_class):
         r.append(idx_to_class[int(i)])
     return  r
 
-
 def main(driver, networkPath = None, ImageFolder = None, dataset_dir = None):
-    
+
     if  os.path.exists("D:\pic\切分\\1"):
         shutil.rmtree("D:\pic\切分\\1")
 
     # networkPath = r'D:\Code\TaxPIC\model\(69)-net.pkl'
-    # ImageFolder = r'D:\pic\切分'  # 切分后的图片的存放地址 
+    # ImageFolder = r'D:\pic\切分'  # 切分后的图片的存放地址
     # dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
 
     imgdata, filename = inputToGetPic(driver)
@@ -171,11 +183,25 @@ def main(driver, networkPath = None, ImageFolder = None, dataset_dir = None):
     # 验证码识别成功后就进行填写提交，获取查验信息
     clickCheckButton = driver.find_element_by_xpath('//*[@id="checkfp"]')
     clickCheckButton.click()
-
-    time.sleep(10)
+    # 原平台使用的是构造请求url的方式直接获取相应json，这个方法虽然繁琐但在网络上比较有效率
 
     return driver
-    # driver.close()
+
+# class browser(object):
+#
+#     def __init__(self, driverpath = None, url = None ):
+#
+#         if driverpath is None:
+#             # 调试时用可视化的chrome webdriver或者edge webdriver
+#
+#
+#         self.driver = webdriver.Chrome(executable_path= self.driverPath)
+#
+#     def Visit(self, url = None):
+#         if url = None:
+#
+#         self.driver.get("https://inv-veri.chinatax.gov.cn/")
+#
 
 if __name__ == '__main__':
 
@@ -183,34 +209,50 @@ if __name__ == '__main__':
     wrong = 0
 
     networkPath = 'D:\Code\TaxPIC\model\(69)-net.pkl'
-    ImageFolder = 'D:\pic\切分'  # 切分后的图片的存放地址 
+    ImageFolder = 'D:\pic\切分'  # 切分后的图片的存放地址
     dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
 
-    # driver = webdriver.PhantomJS(executable_path=r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe')
+    url = "https://inv-veri.chinatax.gov.cn/"
 
-    # 调试时用可视化的chrome webdriver或者edge webdriver
-    # driver = webdriver.Edge(executable_path='D:/webdrivers/MicrosoftWebDriver.exe')
-    driver = webdriver.Chrome(executable_path =r'D:/webdrivers/chromedriver.exe')
-    
-    
-    driver.get("https://inv-veri.chinatax.gov.cn/")  # Load page
+    # driverPath = r'D:\webdrivers\phantomjs-2.1.1-windows\bin\phantomjs.exe'
+    # driverPath = r'D:/webdrivers/MicrosoftWebDriver.exe'
+    driverPath = r'D:/webdrivers/chromedriver.exe'
+
+    driver = webdriver.Chrome(executable_path= driverPath)
+
+    driver.get(url)  # Load page
     driver = main(driver, networkPath, ImageFolder, dataset_dir)
     total = total + 1
-    
+
+    driver.switch_to_default_content()
     selector = etree.HTML(driver.page_source)
-    flag = selector.xpath('//*[@id="cyjg"]')
-    print(flag)
+    flag = selector.xpath('//*[@id="popup_message"]/text()')
+    if len(flag) > 0:
+        flag = str(flag[0])
+    print('flag:', flag)
 
-    while not flag:
-        wrong = wrong + 1
-        # driver.find_element_by_xpath('//*[@id="cyjg"]')   
-        # 如果没有弹出查验成功窗口，刷新页面
-        driver.refresh()
-        driver = main(driver, networkPath, ImageFolder, dataset_dir)
-        total = total + 1
+    while flag is None:
+        try:
+            if errormessage[flag] == 0:
+                time.sleep(100)
 
-        selector = etree.HTML(driver.page_source)
-        flag = selector.xpath('//*[@id="cyjg"]')
-        print(flag)
-    
-    print('正确率: ' + float((wrong/total)*100) + '%')   
+            wrong = wrong + 1
+            driver.refresh()
+            driver = main(driver, networkPath, ImageFolder, dataset_dir)
+            time.sleep(10)
+            total = total + 1
+
+            driver.switch_to_default_content()
+            selector = etree.HTML(driver.page_source)
+            flag = selector.xpath('//*[@id="popup_message"]/text()')
+            if len(flag) > 0:
+                flag = str(flag[0])
+            print(flag)
+
+        except Exception as e:
+            break
+
+    driver.switch_to_default_content()
+    print(driver.page_source)
+    print('正确率: ' + str(float((1 - float(wrong/total))*100)) + '%' , wrong, total)
+    # driver.close()

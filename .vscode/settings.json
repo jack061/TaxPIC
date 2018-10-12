@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\Chen\\Miniconda3\\python.exe",
+    "python.pythonPath": "C:\\Users\\Chen\\Miniconda3\\envs\\TaxPIC\\python.exe",
     "editor.fontFamily": "'Fira Code'",
     "editor.fontLigatures": true,
     "files.autoSave": "onWindowChange"
