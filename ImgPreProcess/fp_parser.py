@@ -1,8 +1,8 @@
 import datetime
 import math
 import json
-from test.settings import root_url
-from test.downloader import Downloader
+from ImgPreProcess.settings import root_url
+from ImgPreProcess.downloader import Downloader
 
 rulers = {
     'dc1de': u'▽☺4>2_8>6☺467☺-4☺□'
@@ -10,7 +10,8 @@ rulers = {
 
 
 class FpParser:
-    # 处理发票信息，验证、获取详情等
+    # 处理发票信息，申请发票的验证、详情获取等
+    # 收到响应中，有关发票信息的处理与输出
 
     def __FormatDate(self, time, add):
         '''

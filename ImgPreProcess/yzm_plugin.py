@@ -7,12 +7,12 @@ __author__ = 'groundlee'
 import io
 # from InvoiceCloud.settings_runmode import RUN_MODE
 RUN_MODE = ''
-import logging
-logger = logging.getLogger('invoice_job')
+# import logging
+# logger = logging.getLogger('invoice_job')
 # import sys
 # sys.path.append('/home/fapiao/Desktop/InvoiceCloud')
 # RUN_MODE = 'product'
-def log_yzm(imgtype,img,result = ''):
+def log_yzm(imgtype, img, result = ''):
     if RUN_MODE != 'product':
         f = open('/Users/groundlee/Downloads/test1_img.html','r')
         data = f.read()
@@ -21,7 +21,7 @@ def log_yzm(imgtype,img,result = ''):
         f = open('/Users/groundlee/Downloads/test1_img.html','w+')
         if type(result) is str :
             result = result.decode('utf-8')
-        html = u'<img src="data:image/jpg;base64,%s" />  result: %s type: %s <br>' % (img,result,imgtype['info'])
+        html = u'<img src="data:image/jpg;base64,%s" />  result: %s type: %s <br>' % (img, result, imgtype['info'])
         # f.seek(0,io.SEEK_END)
         # x = f.tell()
         f.write(html.encode('utf-8'))
@@ -40,26 +40,29 @@ class YzmBase:
 
 
 class ConsoleYzmPlugin(YzmBase):
-
+    '''
+    人工识别，在命令行输入结果
+    '''
     def get(self,type,img):
-        log_yzm(type,img)
-        yzm = input("Enter your input yzm: ");
+        log_yzm(type, img)  # 输入验证码图片的base64数据，
+        yzm = input("Enter your input yzm: ")
         print ("Received input yzm is : ", yzm)
         log_yzm(type,img,yzm)
         return yzm
-
 
 
 from donwloader import Downloader
 import json
 import base64
 from PIL import Image
-import StringIO
+from io import StringIO
 import os
 
 
 class JsdmYzmPlugin(YzmBase):
-
+    '''
+    看不懂名字...
+    '''
     def __init__(self):
         self.getdmResult = None
 
@@ -70,12 +73,18 @@ class JsdmYzmPlugin(YzmBase):
         "password":"Windows7878",
     }
 
-    def __createYzmImage(self,base64Img,imgtype):
+    def __createYzmImage(self, base64Img, yzm_imgtype):
+        '''
+        根据返回的base64以及yzmtype创建验证码文件并保存
+        :param base64Img:
+        :param yzm_imgtype:
+        :return:
+        '''
         data = base64.b64decode(base64Img)
         input = StringIO.StringIO(data)
         image = Image.open(input)
 
-        file_name = os.path.split(os.path.realpath(__file__))[0]+ "/img/" + imgtype['img']
+        file_name = os.path.split(os.path.realpath(__file__))[0]+ "/img/" + yzm_imgtype['img']
         toImage = Image.open(file_name)
         toImage.paste(image,((toImage.width - image.width)/2,toImage.height - image.height ))
 
@@ -96,17 +105,16 @@ class JsdmYzmPlugin(YzmBase):
             "captchaMaxLength":0
             })
         dataPost = json.dumps(data)
-        ret = d.down_date_from_url('https://v2-api.jsdama.com/upload','post',dataPost,timeout= -1)
-        # str '{"code":0,"data":{"recognition":"JBCZGJ","captchaId":"20170911:000000000009323211884"},"message":""}'
-        logger.info('获取验证码返回信息：%s',str(ret))
-        j_ret = json.loads(ret)
-        dataret = j_ret.get('data', None)
+        res = d.request_data_from_url('https://v2-api.jsdama.com/upload','post', dataPost,timeout= -1)
+
+        j_res = json.loads(res)
+        dataret = j_res.get('data')
         if dataret:
             recognition = dataret['recognition']
         else:
             recognition = None
 
-        self.getdmResult = ret
+        self.getdmResult = res
         print( '验证码自动识别：[' ,recognition,']')
         return recognition
 

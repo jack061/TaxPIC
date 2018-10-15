@@ -1,58 +1,15 @@
-from my_random import *
-from fp_parser import FpParser
-from yzm_plugin import *
-from js_caller import *
-
-import requests
-from urllib.parse import urlencode
-import random
-import time
-import json
+from ImgPreProcess.fp_parser import FpParser
+from ImgPreProcess.downloader import Downloader
+from ImgPreProcess.my_random import *
+from ImgPreProcess.settings import yzm_version, tax_citys
 import re
 import traceback
+from ImgPreProcess.js_caller import *
+from urllib.parse import urlencode
+from ImgPreProcess.yzm_plugin import *
 
-yzm_version = 'V1.0.06_001' # 还没变
 
-tax_citys = { #不同城市查验机关有不同的网址，根据这个去构造验证码图片和查验信息请求URL
-        '1100':{'code':'1100','sfmc':'北京','Ip':'https://zjfpcyweb.bjsat.gov.cn:443','address':'https://zjfpcyweb.bjsat.gov.cn:443'},
-        '1200':{'code':'1200','sfmc':'天津','Ip':'https://fpcy.tjsat.gov.cn:443','address':'https://fpcy.tjsat.gov.cn:443'},
-        '1300':{'code':'1300','sfmc':'河北','Ip':'https://fpcy.he-n-tax.gov.cn:82','address':'https://fpcy.he-n-tax.gov.cn:82'},
-        '1400':{'code':'1400','sfmc':'山西','Ip':'https://fpcy.tax.sx.cn:443','address':'https://fpcy.tax.sx.cn:443'},
-        '1500':{'code':'1500','sfmc':'内蒙古','Ip':'https://fpcy.nm-n-tax.gov.cn:443','address':'https://fpcy.nm-n-tax.gov.cn:443'},
-        '2100':{'code':'2100','sfmc':'辽宁','Ip':'https://fpcy.tax.ln.cn:443','address':'https://fpcy.tax.ln.cn:443'},
-        '2102':{'code':'2102','sfmc':'大连','Ip':'https://fpcy.dlntax.gov.cn:443','address':'https://fpcy.dlntax.gov.cn:443'},
-        '2200':{'code':'2200','sfmc':'吉林','Ip':'https://fpcy.jl-n-tax.gov.cn:4432','address':'https://fpcy.jl-n-tax.gov.cn:4432'},
-        '2300':{'code':'2300','sfmc':'黑龙江','Ip':'https://fpcy.hl-n-tax.gov.cn:443','address':'https://fpcy.hl-n-tax.gov.cn:443'},
-        '3100':{'code':'3100','sfmc':'上海','Ip':'https://fpcyweb.tax.sh.gov.cn:1001','address':'https://fpcyweb.tax.sh.gov.cn:1001'},
-        '3200':{'code':'3200','sfmc':'江苏','Ip':'https://fpdk.jsgs.gov.cn:80','address':'https://fpdk.jsgs.gov.cn:80'},
-        '3300':{'code':'3300','sfmc':'浙江','Ip':'https://fpcyweb.zjtax.gov.cn:443','address':'https://fpcyweb.zjtax.gov.cn:443'},
-        '3302':{'code':'3302','sfmc':'宁波','Ip':'https://fpcy.nb-n-tax.gov.cn:443','address':'https://fpcy.nb-n-tax.gov.cn:443'},
-        '3400':{'code':'3400','sfmc':'安徽','Ip':'https://fpcy.ah-n-tax.gov.cn:443','address':'https://fpcy.ah-n-tax.gov.cn:443'},
-        '3500':{'code':'3500','sfmc':'福建','Ip':'https://fpcyweb.fj-n-tax.gov.cn:443','address':'https://fpcyweb.fj-n-tax.gov.cn:443'},
-        '3502':{'code':'3502','sfmc':'厦门','Ip':'https://fpcy.xm-n-tax.gov.cn','address':'https://fpcy.xm-n-tax.gov.cn'},
-        '3600':{'code':'3600','sfmc':'江西','Ip':'https://fpcy.jxgs.gov.cn:82','address':'https://fpcy.jxgs.gov.cn:82'},
-        '3700':{'code':'3700','sfmc':'山东','Ip':'https://fpcy.sd-n-tax.gov.cn:443','address':'https://fpcy.sd-n-tax.gov.cn:443'},
-        '3702':{'code':'3702','sfmc':'青岛','Ip':'https://fpcy.qd-n-tax.gov.cn:443','address':'https://fpcy.qd-n-tax.gov.cn:443'},
-        '4100':{'code':'4100','sfmc':'河南','Ip':'https://fpcy.ha-n-tax.gov.cn','address':'https://fpcy.ha-n-tax.gov.cn'},
-        '4200':{'code':'4200','sfmc':'湖北','Ip':'https://fpcy.hb-n-tax.gov.cn:443','address':'https://fpcy.hb-n-tax.gov.cn:443'},
-        '4300':{'code':'4300','sfmc':'湖南','Ip':'https://fpcy.hntax.gov.cn:8083','address':'https://fpcy.hntax.gov.cn:8083'},
-        '4400':{'code':'4400','sfmc':'广东','Ip':'https://fpcy.gd-n-tax.gov.cn:443','address':'https://fpcy.gd-n-tax.gov.cn:443'},
-        '4403':{'code':'4403','sfmc':'深圳','Ip':'https://fpcy.szgs.gov.cn:443','address':'https://fpcy.szgs.gov.cn:443'},
-        '4500':{'code':'4500','sfmc':'广西','Ip':'https://fpcy.gxgs.gov.cn:8200','address':'https://fpcy.gxgs.gov.cn:8200'},
-        '4600':{'code':'4600','sfmc':'海南','Ip':'https://fpcy.hitax.gov.cn:443','address':'https://fpcy.hitax.gov.cn:443'},
-        '5000':{'code':'5000','sfmc':'重庆','Ip':'https://fpcy.cqsw.gov.cn:80','address':'https://fpcy.cqsw.gov.cn:80'},
-        '5100':{'code':'5100','sfmc':'四川','Ip':'https://fpcy.sc-n-tax.gov.cn:443','address':'https://fpcy.sc-n-tax.gov.cn:443'},
-        '5200':{'code':'5200','sfmc':'贵州','Ip':'https://fpcy.gz-n-tax.gov.cn:80','address':'https://fpcy.gz-n-tax.gov.cn:80'},
-        '5300':{'code':'5300','sfmc':'云南','Ip':'https://fpcy.yngs.gov.cn:443','address':'https://fpcy.yngs.gov.cn:443'},
-        '5400':{'code':'5400','sfmc':'西藏','Ip':'https://fpcy.xztax.gov.cn:81','address':'https://fpcy.xztax.gov.cn:81'},
-        '6100':{'code':'6100','sfmc':'陕西','Ip':'https://fpcyweb.sn-n-tax.gov.cn:443','address':'https://fpcyweb.sn-n-tax.gov.cn:443'},
-        '6200':{'code':'6200','sfmc':'甘肃','Ip':'https://fpcy.gs-n-tax.gov.cn:443','address':'https://fpcy.gs-n-tax.gov.cn:443'},
-        '6300':{'code':'6300','sfmc':'青海','Ip':'https://fpcy.qh-n-tax.gov.cn:443','address':'https://fpcy.qh-n-tax.gov.cn:443'},
-        '6400':{'code':'6400','sfmc':'宁夏','Ip':'https://fpcy.nxgs.gov.cn:443','address':'https://fpcy.nxgs.gov.cn:443'},
-        '6500':{'code':'6500','sfmc':'新疆','Ip':'https://fpcy.xj-n-tax.gov.cn:443','address':'https://fpcy.xj-n-tax.gov.cn:443'}
-        }
-
-class Checker:
+class Checker(object):
     # 填写完了发票信息后前端后向后端发送请求，
     # {"key1":验证码图片base64码,
     # "key2":"2018-10-10 17:04:48",
@@ -136,7 +93,7 @@ class Checker:
         try:
             print('get yzm url:', url)
             # 根据请求URL，下载验证码图片
-            data = self.downloader.down_date_from_url(url)
+            data = self.downloader.request_data_from_url(url)
             # 取出返回的json字符串
             data = re.findall('\(({.*})\)$', data)[0]
             response = json.loads(data)
@@ -226,7 +183,7 @@ class Checker:
         response = {}
         raw_data = ''
         try:
-            data = self.downloader.down_date_from_url(url)
+            data = self.downloader.request_data_from_url(url)
             # print len(data),data
             if data == '':
                 return False, {'errorinfo': '核验返回为空', 'swjg': swjg['sfmc'], 'errorcode': '-999'}
@@ -269,11 +226,11 @@ class Checker:
         :param fpdm:
         :param fphm:
         :param kprq:
-        :param jym: 传入后六位即可,普通发票为开具金额，不含税
+        :param jym_or_kjje:
+        :param yzm_plugin: 专门处理识别验证码的类
         :return:
         '''
         bOK, ret_img = self._get_yzm_image(fpdm, fphm)
-        # bOK 是true or False
         if not bOK:
             print(str(ret_img))
             # 标示在验证码环节出现错误
@@ -284,15 +241,34 @@ class Checker:
 
         bOK, ret = self._checkFp(fpdm, fphm, kprq, jym_or_kjje, yzm, ret_img['key3'], ret_img['key2'])
         if not bOK:
-            # 标示在发票验证环节出现错误
+            # 标示是在发票验证环节出现错误
             ret['err_type'] = 'fp'
         yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
         print(str(ret))
         return bOK, ret
 
     def printFpxx(self, fpxx):
+        '''
+        输出发票信息
+        :param fpxx:
+        :return:
+        '''
         if not fpxx[0]:
             for x in fpxx[1]:
                 print(fpxx[1][x])
             return
         FpParser().printFpxx(fpxx[1])
+
+
+if __name__=='__main__':
+    c = Checker()
+    fpinfo = [
+        {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'},
+        {'fpdm': '033001700211', 'fphm': '58089105', 'kprq': '20180410', 'kjje': '604420'},
+        {'fpdm': '033001700211', 'fphm': '17099263', 'kprq': '20171201', 'kjje': '336134'},
+        {'fpdm': '044031700111', 'fphm': '28478760', 'kprq': '20171129', 'kjje': '737421'},
+    ]
+    fpinfo = random.choice(fpinfo)
+    r1, r2 = c._get_yzm_image(fpinfo.get('fpdm'), fpinfo.get('fphm'))
+    print(r1)
+    print(r2)

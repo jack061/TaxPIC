@@ -38,4 +38,11 @@ tax_citys={ #不同城市查验机关有不同的网址，根据这个去构造�
         '6200':{'code':'6200','sfmc':'甘肃','Ip':'https://fpcy.gs-n-tax.gov.cn:443','address':'https://fpcy.gs-n-tax.gov.cn:443'},
         '6300':{'code':'6300','sfmc':'青海','Ip':'https://fpcy.qh-n-tax.gov.cn:443','address':'https://fpcy.qh-n-tax.gov.cn:443'},
         '6400':{'code':'6400','sfmc':'宁夏','Ip':'https://fpcy.nxgs.gov.cn:443','address':'https://fpcy.nxgs.gov.cn:443'},
-        '6500':{'code':'6500','sfmc':'新疆','Ip':'https://fpcy.xj-n-tax.gov.cn:443','address':'https://fpcy.xj-n-tax.gov.cn:443'}};
+        '6500':{'code':'6500','sfmc':'新疆','Ip':'https://fpcy.xj-n-tax.gov.cn:443','address':'https://fpcy.xj-n-tax.gov.cn:443'}
+        }
+
+networkPath = 'D:\Code\TaxPIC\model\(69)-net.pkl'
+ImageFolder = 'D:\pic\切分'  # 切分后的图片的存放地址
+dataset_dir = 'D:\Code\TaxPIC\PIC\预处理'
+yzm_SaveDir = r'D:\\pic'  # 存放原始图片文件的文件夹
+yzm_CutDir = r'D:\\pic\\切分\\1'  # 处理后的图片存放位置

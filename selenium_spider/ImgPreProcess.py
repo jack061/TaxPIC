@@ -3,20 +3,21 @@ from PIL import Image
 from pylab import *
 import os
 import math
-from settings import yzm_SaveDir, yzm_CutDir
 
 
+fromDir = r'D:\\pic'  # 存放原始图片文件的文件夹
+destDir = r'D:\\pic\\切分\\1'  # 处理后的图片存放位置
 
-def Thresholding(imgName, colorflag):
-    # 二值化，取出想要的文字部分
+
+def Thresholding(imgName, colorflag):  # 二值化，取出想要的文字部分
     
-    if not os.path.exists(yzm_SaveDir):
-        os.makedirs(yzm_SaveDir)
+    if not os.path.exists(fromDir):
+        os.makedirs(fromDir)
         
-    if not os.path.exists(yzm_CutDir):
-        os.makedirs(yzm_CutDir) 
+    if not os.path.exists(destDir):
+        os.makedirs(destDir) 
 
-    imgPath = yzm_SaveDir + '\\' + imgName
+    imgPath = fromDir + '\\' + imgName
     img = Image.open(imgPath)
     imgArray = img.load()
     x, y = img.size
@@ -164,7 +165,7 @@ def Cut(img, filename):
     for i in range(len(child_img_list)):  # 调整大小并保存
 
         new_image = child_img_list[i].resize((16, h), Image.BILINEAR)
-        saveDir = yzm_CutDir + '\\' + str(i) + filename
+        saveDir = destDir + '\\' + str(i) + filename
         new_image.save(saveDir)
 
 
@@ -188,7 +189,7 @@ def imgPreProcess(CAPTCHAFileImgName):
     # print(CAPTCHAFileImgName)
 
     Cut(img, CAPTCHAFileImgName)
-    os.remove((yzm_SaveDir + '\\' + CAPTCHAFileImgName))
+    os.remove((fromDir + '\\' + CAPTCHAFileImgName))
 
     print(CAPTCHAFileImgName, 'Done')
 

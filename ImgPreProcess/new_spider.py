@@ -1,7 +1,7 @@
-from my_random import *
-from js_caller import *
-from yzm_plugin import *
-from fp_parser import FpParser
+from ImgPreProcess.my_random import *
+from ImgPreProcess.js_caller import *
+from ImgPreProcess.yzm_plugin import *
+from ImgPreProcess.fp_parser import FpParser
 import requests
 from urllib.parse import urlencode
 import random
@@ -14,7 +14,8 @@ ua = UserAgent()
 
 yzm_version = 'V1.0.06_001' # 还没变
 
-tax_citys = { #不同城市查验机关有不同的网址，根据这个去构造验证码图片和查验信息请求URL
+tax_citys = {
+        # 不同城市查验机关有不同的网址，根据这个去构造验证码图片和查验信息请求URL
         '1100':{'code':'1100','sfmc':'北京','Ip':'https://zjfpcyweb.bjsat.gov.cn:443','address':'https://zjfpcyweb.bjsat.gov.cn:443'},
         '1200':{'code':'1200','sfmc':'天津','Ip':'https://fpcy.tjsat.gov.cn:443','address':'https://fpcy.tjsat.gov.cn:443'},
         '1300':{'code':'1300','sfmc':'河北','Ip':'https://fpcy.he-n-tax.gov.cn:82','address':'https://fpcy.he-n-tax.gov.cn:82'},
@@ -62,7 +63,7 @@ class Downloader:
     下载器, 输入请求url,下载器进行请求，返回请求的数据
     '''
 
-    def request_data_from_url(self, url,method='get', post_data= {}, referer = None, user_agent = None, other_headers = {}, timeout = -1):
+    def request_data_from_url(self, url, method='get', post_data= {}, referer = None, user_agent = None, other_headers = {}, timeout = -1):
 
         ip = '%d.%d.%d.%d' % (random.choice(range(100,244)),random.choice(range(100,244)),random.choice(range(100,244)),random.choice(range(100,244)))
 
@@ -76,7 +77,11 @@ class Downloader:
         if referer: headers['RefererAgent'] = referer
         headers.update(other_headers)
 
-        req = requests.get(url, headers=headers, verify=False ,timeout = timeout if timeout > 0 else 1)
+
+        if method == 'get':
+            req = requests.get(url, headers=headers, verify=False, timeout=timeout if timeout > 0 else 1)
+        else:
+            req = requests.post(url, data=post_data, headers=headers, verify=False, timeout=timeout if timeout > 0 else 1)
 
         data = req.text
         return data
@@ -171,7 +176,7 @@ class Checker:
             try:
                 print('get yzm url:', url)
                 # 根据请求URL，下载验证码图片
-                data = self.downloader.down_date_from_url(url)
+                data = self.downloader.request_data_from_url(url)
                 # 取出返回的json字符串
                 data = re.findall('\(({.*})\)$', data)[0]
                 response = json.loads(data)
@@ -192,6 +197,21 @@ class Checker:
                 print(traceback.format_exc())
                 return (False, {'errorinfo': str(e), 'errorcode': -999, 'swjg': swjg})
 
+        # 发票查验错误代码
+        fp_err_info = {
+            '002': u'超过该张发票当日查验次数(请于次日再次查验)!',
+            '003': u'发票查验请求太频繁，请稍后再试！',
+            '004': u'超过服务器最大请求数，请稍后访问!',
+            '005': u'请求不合法!',
+            '006': u'发票信息不一致',
+            '007': u'验证码失效',
+            '008': u'验证码错误',
+            '009': u'查无此票',
+            '010': u'网络超时，请重试！',
+            '010_': u'网络超时，请重试！',
+            '020': u'由于查验行为异常，涉嫌违规，当前无法使用查验服务！',
+            'rqerr': u'当日开具发票可于次日进行查验'
+        }
 
 
         def _checkFp(self, fpdm, fphm, kprq, fpje_or_jym, yzm, index_yzm_key3, yzmsj_key2):
@@ -235,13 +255,11 @@ class Checker:
                 "yzmSj": yzmsj_key2,
             }
 
-
             swjg = self._get_swjg_from_fpdm(fpdm)
             if not swjg:
                 return False, None
 
             params = urlencode(request_info)
-
 
             url = u'%s/WebQuery/vatQuery?callback=jQuery1%s_1530868658752&%s&area=%s&_=15%s' \
                 % (swjg['Ip'], getNumRandomStr(21), params, swjg['code'], getNumRandomStr(11))
@@ -249,7 +267,7 @@ class Checker:
             response = {}
             raw_data = ''
             try:
-                data = self.downloader.down_date_from_url(url)
+                data = self.downloader.request_data_from_url(url)
                 # print len(data),data
                 if data == '':
                     return False, {'errorinfo': '核验返回为空', 'swjg': swjg['sfmc'], 'errorcode': '-999'}
@@ -286,14 +304,17 @@ class Checker:
                 print(traceback.format_exc())
                 return (False, {'errorinfo': str(e), 'swjg': swjg['sfmc'], 'errorcode': '-999'})
 
+
         def CheckFp(self, fpdm, fphm, kprq, jym_or_kjje, yzm_plugin = ConsoleYzmPlugin()):
             '''
             发票查验入口
+            1.输入发票信息与验证码信息，获取验证码
+            2.
             :param fpdm:
             :param fphm:
             :param kprq:
             :param jym_or_kjje:
-            :param yzm_plugin: 专门处理识别验证码的类
+            :param yzm_plugin: 专门处理识别验证码的类，这里用的函数负责下载验证码图片并在命令行获取人手动验证的验证码
             :return:
             '''
             bOK, ret_img = self._get_yzm_image(fpdm, fphm)
@@ -307,13 +328,19 @@ class Checker:
 
             bOK, ret = self._checkFp(fpdm, fphm, kprq, jym_or_kjje, yzm, ret_img['key3'], ret_img['key2'])
             if not bOK:
-                # 标示在发票验证环节出现错误
+                # 标示是在发票验证环节出现错误
                 ret['err_type'] = 'fp'
             yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
             print(str(ret))
             return bOK, ret
 
+
         def printFpxx(self, fpxx):
+            '''
+            输出发票信息
+            :param fpxx:
+            :return:
+            '''
             if not fpxx[0]:
                 for x in fpxx[1]:
                     print(fpxx[1][x])
