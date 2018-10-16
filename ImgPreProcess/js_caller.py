@@ -1,3 +1,4 @@
+# 要构造的请求中的一些value是通过aes加密的，这里使用js的一些代码进行加密
 import os
 import execjs
 import time

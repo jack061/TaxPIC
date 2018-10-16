@@ -2,49 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01a4be50-9dae-4c92-b98b-fbb8b289ffdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ImgPreProcess/downloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImgPreProcess/recognizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ImgPreProcess/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/downloader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/fp_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/fp_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/90a1c.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/90a1c.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/90a1c.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/90a1c.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/common.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/common.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/cookies.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/cookies.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/eab23.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/eab23.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/eab23.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/eab23.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/indexfunc.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/indexfunc.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/result.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/result.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/showModalDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/showModalDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/showModalDialog.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/showModalDialog.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/t.q.b.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/t.q.b.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/t.q.e.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/t.q.e.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/20180212/t.q.z.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/20180212/t.q.z.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/AesUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/AesUtil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/aes.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/aes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/encrypt.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/encrypt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/m.q.d.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/m.q.d.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/q.b.a.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/q.b.a.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/s.d.b.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/s.d.b.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js/t.q.d.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js/t.q.d.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/js_caller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js_caller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/my_random.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/my_random.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/new_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/new_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/yzm_plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/查验成功.html" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/查验成功.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test/验证码请求次数过于频繁.html" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/验证码请求次数过于频繁.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/downloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/downloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/fp_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/fp_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/js_caller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/js_caller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/new_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/new_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/recognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/recognizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +21,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/TaxPIC$checker__1_.coverage" NAME="checker (1) Coverage Results" MODIFIED="1539654620896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
+    <SUITE FILE_PATH="coverage/TaxPIC$recognizer.coverage" NAME="recognizer Coverage Results" MODIFIED="1539660856919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
     <SUITE FILE_PATH="coverage/TaxPIC$fp_parser.coverage" NAME="fp_parser Coverage Results" MODIFIED="1539052863352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
     <SUITE FILE_PATH="coverage/TaxPIC$main.coverage" NAME="main Coverage Results" MODIFIED="1539325717224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
     <SUITE FILE_PATH="coverage/TaxPIC$downloader.coverage" NAME="downloader Coverage Results" MODIFIED="1539052193391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
-    <SUITE FILE_PATH="coverage/TaxPIC$yzm_plugin.coverage" NAME="yzm_plugin Coverage Results" MODIFIED="1539589967665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
+    <SUITE FILE_PATH="coverage/TaxPIC$yzm_plugin.coverage" NAME="yzm_plugin Coverage Results" MODIFIED="1539594371268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
     <SUITE FILE_PATH="coverage/TaxPIC$test.coverage" NAME="test Coverage Results" MODIFIED="1539571698744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess/test" />
+    <SUITE FILE_PATH="coverage/TaxPIC$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1539659419351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess" />
     <SUITE FILE_PATH="coverage/TaxPIC$checker.coverage" NAME="checker Coverage Results" MODIFIED="1539572009990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImgPreProcess/test" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -79,25 +50,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="3" />
-          <entry key="py" value="64" />
+          <entry key="py" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="3" />
-          <entry key="Python" value="64" />
+          <entry key="Python" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="18" />
-          <entry key="py" value="4417" />
+          <entry key="py" value="6676" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="18" />
-          <entry key="Python" value="4417" />
+          <entry key="Python" value="6676" />
         </counts>
       </usages-collector>
     </session>
@@ -105,12 +76,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/new_spider.py">
+        <entry file="file://$PROJECT_DIR$/ImgPreProcess/checker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1548">
-              <caret line="328" column="71" selection-start-line="328" selection-start-column="68" selection-end-line="328" selection-end-column="71" />
+            <state relative-caret-position="1403">
+              <caret line="284" column="13" lean-forward="true" selection-start-line="284" selection-start-column="13" selection-end-line="284" selection-end-column="13" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,32 +90,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="125" column="21" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ImgPreProcess/downloader.py">
+        <entry file="file://$PROJECT_DIR$/ImgPreProcess/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="512">
+              <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/recognizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="104" column="62" selection-start-line="104" selection-start-column="62" selection-end-line="104" selection-end-column="62" />
+            <state relative-caret-position="759">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
-                <marker date="1539589827032" expanded="true" signature="971:1002" ph="..." />
+                <marker date="1539660511129" expanded="true" signature="1050:1920" ph="..." />
               </folding>
             </state>
           </provider>
@@ -153,19 +124,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="260">
+              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selenium_spider/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-485">
+              <caret line="146" selection-start-line="146" selection-end-line="153" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-672">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="316">
+              <caret line="193" column="34" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="34" />
               <folding>
                 <element signature="e#23#44#0" expanded="true" />
+                <marker date="1539660239341" expanded="true" signature="162:200" ph="..." />
+                <marker date="1539660239341" expanded="true" signature="2030:2031" ph="..." />
+                <marker date="1539660239341" expanded="true" signature="7061:7068" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ImgPreProcess/js_caller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,14 +191,28 @@
       <find>fplx</find>
       <find>random</find>
       <find>get_fplx_from_fpdm</find>
-      <find>type</find>
       <find>down</find>
       <find>date_from_url</find>
       <find>fromDir</find>
       <find>destDir</find>
+      <find>IP</find>
+      <find>swjg['Ip']</find>
+      <find>base</find>
+      <find>imgdata</find>
+      <find>save</find>
+      <find>ImgPreProcess.</find>
+      <find>ua</find>
+      <find>type</find>
+      <find>print</find>
+      <find>最小</find>
+      <find>find_classes</find>
+      <find>.get</find>
+      <find>sav</find>
     </findStrings>
     <replaceStrings>
       <replace>yzm_CutDir</replace>
+      <replace>Url</replace>
+      <replace>swjg['Url']</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -216,9 +225,7 @@
         <option value="$PROJECT_DIR$/test/spider_template/fp_parser.py" />
         <option value="$PROJECT_DIR$/test/spider_template/chinatax_db_checker.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/my_random.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/js_caller.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/spider.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/fp_parser.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/new_pider.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/test/js_caller.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/test/settings.py" />
@@ -231,15 +238,18 @@
         <option value="$PROJECT_DIR$/ImgPreProcess/test/fp_parser.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/test/checker.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/test/yzm_plugin.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/test.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/new_spider.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/js/20180212/recognition.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/settings.py" />
         <option value="$PROJECT_DIR$/selenium_spider/ImgPreProcess.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" />
-        <option value="$PROJECT_DIR$/ImgPreProcess/recognizer.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py" />
         <option value="$PROJECT_DIR$/ImgPreProcess/downloader.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/js_caller.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/fp_parser.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/new_spider.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/test.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/settings.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/recognizer.py" />
+        <option value="$PROJECT_DIR$/ImgPreProcess/checker.py" />
       </list>
     </option>
   </component>
@@ -326,7 +336,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -352,7 +362,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.yzm_plugin">
+  <component name="RunManager" selected="Python.recognizer">
+    <configuration name="checker (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TaxPIC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/checker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="checker" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TaxPIC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -375,7 +407,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fp_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="recognizer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TaxPIC" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,7 +420,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Code\TaxPIC\ImgPreProcess\fp_parser.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/recognizer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -397,7 +429,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TaxPIC" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -410,29 +442,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Code\TaxPIC\ImgPreProcess\test\main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TaxPIC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImgPreProcess/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Code\TaxPIC\ImgPreProcess\test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImgPreProcess/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -464,19 +474,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.fp_parser" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.checker" />
       <item itemvalue="Python.yzm_plugin" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.checker (1)" />
+      <item itemvalue="Python.recognizer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.recognizer" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.checker (1)" />
         <item itemvalue="Python.yzm_plugin" />
         <item itemvalue="Python.checker" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.fp_parser" />
       </list>
     </recent_temporary>
   </component>
@@ -497,13 +507,13 @@
     <frame x="-7" y="-7" width="2062" height="1136" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="0" sideWeight="0.50136983" side_tool="true" weight="0.108673975" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.108673975" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49863014" visible="true" weight="0.108673975" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968128" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27290836" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39940238" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -567,35 +577,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/js_caller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/main.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/fp_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/checker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/js/20180212/recognition.py" />
     <entry file="file://$PROJECT_DIR$/selenium_spider/ImgPreProcess.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -604,64 +586,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="e#23#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/selenium_spider/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="178" column="24" selection-start-line="175" selection-start-column="4" selection-end-line="178" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/new_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="328" column="71" selection-start-line="328" selection-start-column="68" selection-end-line="328" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/downloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="-146">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/js_caller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/fp_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3808">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/new_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selenium_spider/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-485">
+          <caret line="146" selection-start-line="146" selection-end-line="153" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/yzm_plugin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="125" column="21" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/checker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1403">
+          <caret line="284" column="13" lean-forward="true" selection-start-line="284" selection-start-column="13" selection-end-line="284" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/recognizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="104" column="62" selection-start-line="104" selection-start-column="62" selection-end-line="104" selection-end-column="62" />
+        <state relative-caret-position="759">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <marker date="1539589827032" expanded="true" signature="971:1002" ph="..." />
+            <marker date="1539660511129" expanded="true" signature="1050:1920" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImgPreProcess/ImgPreProcess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="193" column="34" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="34" />
+          <folding>
+            <element signature="e#23#44#0" expanded="true" />
+            <marker date="1539660239341" expanded="true" signature="162:200" ph="..." />
+            <marker date="1539660239341" expanded="true" signature="2030:2031" ph="..." />
+            <marker date="1539660239341" expanded="true" signature="7061:7068" ph="..." />
           </folding>
         </state>
       </provider>

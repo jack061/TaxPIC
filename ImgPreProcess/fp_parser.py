@@ -1,8 +1,8 @@
 import datetime
 import math
 import json
-from ImgPreProcess.settings import root_url
-from ImgPreProcess.downloader import Downloader
+from settings import root_url
+from downloader import Downloader
 
 rulers = {
     'dc1de': u'▽☺4>2_8>6☺467☺-4☺□'
@@ -214,7 +214,7 @@ class FpParser:
         if key11 in rulers:
             return rulers[key11]
         # 'var rule="▽☺4>2_8>6☺467☺-4☺□"'
-        ret = Downloader().down_date_from_url('%sjs/%s.js' % (root_url, key11))
+        ret = Downloader().request_data_from_url('%sjs/%s.js' % (root_url, key11))
         ret = ret.decode('utf8')
         rulers[key11] = ret.split(u'"')[1]
         return rulers[key11]

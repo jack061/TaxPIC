@@ -1,15 +1,16 @@
-from ImgPreProcess.fp_parser import FpParser
-from ImgPreProcess.downloader import Downloader
-from ImgPreProcess.my_random import *
-from ImgPreProcess.settings import yzm_version, tax_citys
+from fp_parser import FpParser
+from downloader import Downloader
+from recognizer import Recongnizer
+from my_random import *
+from settings import yzm_version, tax_citys
 import re
 import traceback
-from ImgPreProcess.js_caller import *
+from js_caller import *
 from urllib.parse import urlencode
-from ImgPreProcess.yzm_plugin import *
+from yzm_plugin import *
 
 
-class Checker(object):
+class Checker:
     # 填写完了发票信息后前端后向后端发送请求，
     # {"key1":验证码图片base64码,
     # "key2":"2018-10-10 17:04:48",
@@ -85,34 +86,39 @@ class Checker(object):
 
         # 观察规律，构造请求验证码图片的url
         url = '%s/WebQuery/yzmQuery?callback=jQuery1%s_1%s&fpdm=%s&fphm=%s&r=0.%s&_=1%s&v=%s&nowtime=%s&area=%s&publickey=%s' % \
-              (swjg['Ip'], getNumRandomStr(21), getNumRandomStr(12), fpdm, fphm, getNumRandomStr(16),
+              (swjg['Url'], getNumRandomStr(21), getNumRandomStr(12), fpdm, fphm, getNumRandomStr(16),
                getNumRandomStr(12),
                yzm_version, nowtime, swjg['code'], ckYZM(fpdm, nowtime))
 
         response = {}
-        try:
-            print('get yzm url:', url)
-            # 根据请求URL，下载验证码图片
-            data = self.downloader.request_data_from_url(url)
-            # 取出返回的json字符串
-            data = re.findall('\(({.*})\)$', data)[0]
-            response = json.loads(data)
-            response['swjg'] = swjg
-            if response['key1'] in Checker.yzm_err_info:
-                # key1 如果是这些，就说明发生了错误。否则应当是base64形式的图片数据
-                response['errorinfo'] = Checker.yzm_err_info[response['key1']]
-                response['errorcode'] = response['key1']
-                print(fpdm, url, response['errorinfo'])
-                return False, response
+        while True:
+            try:
+                print('get yzm url:', url)
+                # 根据请求URL，下载验证码图片
+                data = self.downloader.request_data_from_url(url)
+                # 取出返回的json字符串
+                data = re.findall('\(({.*})\)$', data)[0]
+                ret = json.loads(data)
+                ret['swjg'] = swjg
+                if ret['key1'] in Checker.yzm_err_info:
+                    # key1 如果是这些，就说明发生了错误。否则应当是base64形式的图片数据
+                    ret['errorinfo'] = Checker.yzm_err_info[ret['key1']]
+                    ret['errorcode'] = ret['key1']
+                    print(fpdm, url, ret['errorinfo'])
+                    return False, ret
 
-            response['type'] = Checker.yzm_info[response['key4']]
-            return True, response
+                # 我们的网络暂时无法对随机底色黑色字符的验证码图片做较好的二值化，所以重来，直到请求到
+                if ret['key4'] == '00':
+                    continue
 
-        except Exception as e:
-            # 输出详细的错误信息，便于调试
-            print(str(e))
-            print(traceback.format_exc())
-            return (False, {'errorinfo': str(e), 'errorcode': -999, 'swjg': swjg})
+                ret['type'] = Checker.yzm_info[ret['key4']]
+                return True, ret
+
+            except Exception as e:
+                # 输出详细的错误信息，便于调试
+                print(str(e))
+                print(traceback.format_exc())
+                return (False, {'errorinfo': str(e), 'errorcode': -999, 'swjg': swjg})
 
     # 发票查验错误代码
     fp_err_info = {
@@ -132,7 +138,7 @@ class Checker(object):
 
     def _checkFp(self, fpdm, fphm, kprq, fpje_or_jym, yzm, index_yzm_key3, yzmsj_key2):
         """
-        识别了验证码以后，根据以上信息构造发票查验url，返回查验信息
+        识别了验证码以后，根据以上信息构造发票查验url，返回查验结果
         # https://fpcy.szgs.gov.cn/WebQuery/query?callback=jQuery110206557166752159265_1504944292710
         #   &fpdm=4403172130&fphm=11868624&kprq=20170906&fpje=296.23
         #   &fplx=01&yzm=mm&yzmSj=2017-09-09+15%3A55%3A52&
@@ -178,7 +184,7 @@ class Checker(object):
         params = urlencode(request_info)
 
         url = u'%s/WebQuery/vatQuery?callback=jQuery1%s_1530868658752&%s&area=%s&_=15%s' \
-              % (swjg['Ip'], getNumRandomStr(21), params, swjg['code'], getNumRandomStr(11))
+              % (swjg['Url'], getNumRandomStr(21), params, swjg['code'], getNumRandomStr(11))
 
         response = {}
         raw_data = ''
@@ -220,14 +226,16 @@ class Checker(object):
             print(traceback.format_exc())
             return (False, {'errorinfo': str(e), 'swjg': swjg['sfmc'], 'errorcode': '-999'})
 
-    def CheckFp(self, fpdm, fphm, kprq, jym_or_kjje, yzm_plugin=ConsoleYzmPlugin()):
+    def CheckFp(self, fpdm, fphm, kprq, jym_or_kjje, yzm_plugin=Recongnizer()):
         '''
         发票查验入口
+        1.输入发票信息与验证码信息，获取验证码
+        2.
         :param fpdm:
         :param fphm:
         :param kprq:
         :param jym_or_kjje:
-        :param yzm_plugin: 专门处理识别验证码的类
+        :param yzm_plugin: 专门处理识别验证码的类，这里用的函数负责下载验证码图片并在命令行获取人手动验证的验证码
         :return:
         '''
         bOK, ret_img = self._get_yzm_image(fpdm, fphm)
@@ -237,13 +245,15 @@ class Checker(object):
             ret_img['err_type'] = 'yzm'
             return bOK, ret_img
 
-        yzm = yzm_plugin.get(ret_img['type'], ret_img['key1'])
+        yzm = yzm_plugin.recongnize(ret_img['type'], ret_img['key1'])
+        # 传入yzm_type, yzm_base64，识别验证码并返回
 
         bOK, ret = self._checkFp(fpdm, fphm, kprq, jym_or_kjje, yzm, ret_img['key3'], ret_img['key2'])
         if not bOK:
             # 标示是在发票验证环节出现错误
             ret['err_type'] = 'fp'
-        yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
+
+        # yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
         print(str(ret))
         return bOK, ret
 
@@ -269,6 +279,7 @@ if __name__=='__main__':
         {'fpdm': '044031700111', 'fphm': '28478760', 'kprq': '20171129', 'kjje': '737421'},
     ]
     fpinfo = random.choice(fpinfo)
+    print(fpinfo)
     r1, r2 = c._get_yzm_image(fpinfo.get('fpdm'), fpinfo.get('fphm'))
     print(r1)
     print(r2)

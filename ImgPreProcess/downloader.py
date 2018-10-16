@@ -28,3 +28,4 @@ class Downloader:
 
         data = req.text
         return data
+
