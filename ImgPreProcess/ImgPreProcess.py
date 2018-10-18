@@ -3,7 +3,8 @@ from PIL import Image
 from pylab import *
 import os
 import math
-from settings import YZM_SAVEFOLDER, YZM_CUTFOLDER
+import shutil
+from settings import YZM_SAVEFOLDER, YZM_CUTFOLDER, MODE
 
 
 class ImgPreProcesser:
@@ -27,8 +28,12 @@ class ImgPreProcesser:
         imgPath = YZM_SAVEFOLDER + '\\' + imgFileName
         img = Image.open(imgPath)
         imgArray = img.load()
+        if MODE != 'test':
+            os.remove(imgPath)
+
         x, y = img.size
 
+        # 对于不同的验证码二值化不同的字符
         if 'red' in str(imgFileName):
             for i in range(y):
                 for j in range(x):
@@ -46,7 +51,6 @@ class ImgPreProcesser:
                         img.putpixel((j, i), (0, 0, 0, 0))
                     else:
                         img.putpixel((j, i), (255, 255, 255, 255))
-
 
         elif 'yellow' in str(imgFileName):
             for i in range(y):
@@ -100,16 +104,13 @@ class ImgPreProcesser:
         return img
 
 
-    def Cut(self, filename, imgdata = None, ):
+    def Cut(self, img):
         '''
         将图片按字符切开
         :param img:
         :param filename:
         :return:
         '''
-        if imgdata is None:
-            img = Image.open(filename)
-
         child_img_list = []
         w, h = img.size
         startEdge = []
@@ -190,24 +191,21 @@ class ImgPreProcesser:
         for i in range(len(child_img_list)):
 
             new_image = child_img_list[i].resize((16, h), Image.BILINEAR)
-            saveDir = YZM_CUTFOLDER + '\\' + str(i) + filename
+            saveDir = YZM_CUTFOLDER + '\\' + str(i) + '.png'
             new_image.save(saveDir)
 
-        # 切分后删除原图片
-        os.remove((YZM_SAVEFOLDER + '\\' + filename))
 
+    def ImgPreProcess(self, yzm_name):
 
-    def ImgPreProcess(self, CAPTCHAFileImgName):
-        CAPTCHAFileImgName = CAPTCHAFileImgName
         # 先将需要识别与不需要识别的字符二值化
-        img = self.Thresholding(CAPTCHAFileImgName,)
+        img = self.Thresholding(yzm_name,)
         # 去噪点
         img = self.Denoise(img)
 
-        self.Cut(CAPTCHAFileImgName, img)
+        self.Cut(img)
 
-        print(CAPTCHAFileImgName, 'Done')
+        return('Preprocessing  ', yzm_name, ', Done')
 
 
 if __name__ == '__main__':
-    pass
+    ImgPreProcesser().ImgPreProcess('yzm_blue.png')

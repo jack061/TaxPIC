@@ -170,7 +170,7 @@ def main(driver, networkPath = None, ImageFolder = None, dataset_dir = None):
         imgdata, filename = inputToGetPic(driver)
 
     saveImg(imgdata, filename)  # 已保存要识别的验证码，下面开始优化、切分
-    imgPreProcess(filename)
+    ImgPreProcesser.ImgPreProcess(filename)
 
 
     result = identity(networkPath, ImageFolder)

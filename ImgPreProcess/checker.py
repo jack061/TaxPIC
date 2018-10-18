@@ -90,7 +90,6 @@ class Checker:
                getNumRandomStr(12),
                yzm_version, nowtime, swjg['code'], ckYZM(fpdm, nowtime))
 
-        response = {}
         while True:
             try:
                 print('get yzm url:', url)
@@ -189,7 +188,7 @@ class Checker:
         response = {}
         raw_data = ''
         try:
-            data = self.downloader.request_data_from_url(url)
+            data = self.downloader.request_data_from_url(url, timeout= 500)
             # print len(data),data
             if data == '':
                 return False, {'errorinfo': '核验返回为空', 'swjg': swjg['sfmc'], 'errorcode': '-999'}
@@ -198,7 +197,7 @@ class Checker:
 
             raw_data = data
 
-            data = data.decode('gbk')
+            # data = data.decode('gbk')
             response = json.loads(data)
             response['swjg'] = swjg
             bOK = False
@@ -240,8 +239,8 @@ class Checker:
         '''
         bOK, ret_img = self._get_yzm_image(fpdm, fphm)
         if not bOK:
-            print(str(ret_img))
-            # 标示在验证码环节出现错误
+            # print(str(ret_img))
+            # 标示在获取验证码环节出现错误
             ret_img['err_type'] = 'yzm'
             return bOK, ret_img
 
@@ -254,7 +253,7 @@ class Checker:
             ret['err_type'] = 'fp'
 
         # yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
-        print(str(ret))
+        # print(str(ret))
         return bOK, ret
 
     def printFpxx(self, fpxx):
@@ -271,15 +270,20 @@ class Checker:
 
 
 if __name__=='__main__':
-    c = Checker()
-    fpinfo = [
-        {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'},
-        {'fpdm': '033001700211', 'fphm': '58089105', 'kprq': '20180410', 'kjje': '604420'},
-        {'fpdm': '033001700211', 'fphm': '17099263', 'kprq': '20171201', 'kjje': '336134'},
-        {'fpdm': '044031700111', 'fphm': '28478760', 'kprq': '20171129', 'kjje': '737421'},
-    ]
-    fpinfo = random.choice(fpinfo)
-    print(fpinfo)
-    r1, r2 = c._get_yzm_image(fpinfo.get('fpdm'), fpinfo.get('fphm'))
-    print(r1)
-    print(r2)
+    success = 0
+    total = 50
+    for i in range(total):
+        time.sleep(10)
+        c = Checker()
+        fpinfo = [
+            {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'},
+            {'fpdm': '033001700211', 'fphm': '58089105', 'kprq': '20180410', 'kjje': '604420'},
+            {'fpdm': '033001700211', 'fphm': '17099263', 'kprq': '20171201', 'kjje': '336134'},
+            {'fpdm': '044031700111', 'fphm': '28478760', 'kprq': '20171129', 'kjje': '737421'},
+        ]
+        fpinfo = random.choice(fpinfo)
+        bOK, ret = c.CheckFp(fpinfo['fpdm'], fpinfo['fphm'],fpinfo['kprq'], fpinfo['kjje'])
+        if bOK:
+            success += 1
+        print(ret)
+    print('成功率: ',float(success/total) , '%')

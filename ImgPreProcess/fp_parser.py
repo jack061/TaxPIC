@@ -461,7 +461,7 @@ class FpParser:
         j = json.loads(data)
 
         fpxxs_str = '%s≡%s≡%s≡' % (fpdm, fphm, swjgmc)
-        fpxxs_str = fpxxs_str.decode('utf8')
+        # fpxxs_str = fpxxs_str.decode('utf8')
         fpxxs_str += j['key2'] + u'≡'
         # fpxxs = fpxxs.split(u"≡")
         # key4是复数发票对应的正数发票代码和号码

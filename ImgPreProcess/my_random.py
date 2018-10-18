@@ -8,7 +8,7 @@ def getASCIIRandomStr( length):
 
 def getLittleHexRandomStr(length):
     s = 'abcdef' + string.digits
-    s = s*(length/len(s)+1)
+    s = s*int(length/len(s)+1)
     return ''.join(random.sample((s), length))
 
 def getNumRandomStr(length):
