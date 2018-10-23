@@ -50,3 +50,4 @@ YZM_CUTFOLDER = r'D:\pic\cut\1'  # 存放处理后切分的图片
 MODE = 'test'
 
 PROXY_PATH = 'D:\Code\TaxPIC\ImgPreProcess\proxies.txt'
+PHANTOMJS_PATH = r'D:\phantomjs\bin\phantomjs.exe'

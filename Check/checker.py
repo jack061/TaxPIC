@@ -189,7 +189,7 @@ class Checker:
         raw_data = ''
         try:
             data = self.downloader.request_data_from_url(url, timeout= 500)
-            # print len(data),data
+            print (len(data),data)
             if data == '':
                 return False, {'errorinfo': '核验返回为空', 'swjg': swjg['sfmc'], 'errorcode': '-999'}
 
@@ -239,7 +239,7 @@ class Checker:
         '''
         bOK, ret_img = self._get_yzm_image(fpdm, fphm)
         if not bOK:
-            # print(str(ret_img))
+            print(str(ret_img))
             # 标示在获取验证码环节出现错误
             ret_img['err_type'] = 'yzm'
             return bOK, ret_img
@@ -253,7 +253,7 @@ class Checker:
             ret['err_type'] = 'fp'
 
         # yzm_plugin.report(False if ('errorcode' in ret and (ret['errorcode'] == '008')) else True)
-        # print(str(ret))
+        print(str(ret))
         return bOK, ret
 
     def printFpxx(self, fpxx):
@@ -285,5 +285,5 @@ if __name__=='__main__':
         bOK, ret = c.CheckFp(fpinfo['fpdm'], fpinfo['fphm'],fpinfo['kprq'], fpinfo['kjje'])
         if bOK:
             success += 1
-        print(ret)
-    print('成功率: ',float(success/total) , '%')
+    #     print(ret)
+    # print('成功率: ',float(success/total) , '%')

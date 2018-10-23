@@ -69,22 +69,20 @@ class Checker_Gui(object):
         self.input_kjje = tk.Entry(self.mainWindow, )
         self.input_kjje.grid(row=3, column=1)
 
-        self.result_box = tk.Text(self.mainWindow, height=10)
-        self.result_box.grid(columnspan=2)
+        self.result_label = tk.Label(self.mainWindow, text="查验结果")
+        self.result_label.grid(row=6, columnspan=4)
+        self.result_box = tk.Text(self.mainWindow,  height=10)
+        self.result_box.grid(row=7, columnspan=4)
 
+        # 放置按钮
         self.check_button = tk.Button(self.mainWindow, text="查验发票", width=15, height=2, command=func)
-        self.check_button.grid(columnspan=2)  # 放置按钮
+        self.check_button.grid(columnspan=4)
 
 
     def Gui_Run(self):
         root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.mainWindow.mainloop()  # 显示窗口
 
-    def on_closing(self):
-        if messagebox.askokcancel("Quit", "Do you want to quit?"):
-            root.destroy()
-
-        root.protocol("WM_DELETE_WINDOW", on_closing)
 
 
 class ThreadClient(object):
@@ -92,15 +90,31 @@ class ThreadClient(object):
     def __init__(self, master):
         self.master = master
         self.gui = Checker_Gui(master, self.starting)  # 将我们定义的GUI类赋给服务类的属性，将执行的功能函数作为参数传入
+        self.fp_err_info = {
+            '002': u'超过该张发票当日查验次数(请于次日再次查验)!',
+            '003': u'发票查验请求太频繁，请稍后再试！',
+            '004': u'超过服务器最大请求数，请稍后访问!',
+            '005': u'请求不合法!',
+            '006': u'发票信息不一致',
+            '007': u'验证码失效',
+            '008': u'验证码错误',
+            '009': u'查无此票',
+            '010': u'网络超时，请重试！',
+            '010_': u'网络超时，请重试！',
+            '020': u'由于查验行为异常，涉嫌违规，当前无法使用查验服务！',
+            'rqerr': u'当日开具发票可于次日进行查验'
+        }
 
     def start_checker(self, fpinfo):
         bOK = False
         while bOK is False:
             time.sleep(5)
             c = Checker()
-
             bOK, ret = c.CheckFp(fpinfo['fpdm'], fpinfo['fphm'], fpinfo['kprq'], fpinfo['kjje'])
-        return ret
+            if ret.get('errorcode') in ['002', '003', '009', 'rqerr', ]:
+                return bOK, ret
+
+        return bOK, ret
 
     def click_check_button(self,):
         self.gui.result_box.delete(0.0, tk.END)
@@ -109,14 +123,18 @@ class ThreadClient(object):
         kprq = self.gui.input_kprq.get()
         kjje = self.gui.input_kjje.get()
         if MODE == 'test':
-            fpinfo = {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'}
+            fpinfo = {'fpdm': '033001700211', 'fphm': '58089105', 'kprq': '20180410', 'kjje': '604420'}
         else:
             fpinfo = {'fpdm': fpdm, 'fphm': fphm, 'kprq': kprq, 'kjje': kjje}
 
-        res = self.start_checker(fpinfo)
-        ret = response_parser(res)
+        bOK, res = self.start_checker(fpinfo)
+        if bOK:
+            ret = response_parser(res)
+            self.gui.result_box.insert('current', str(ret))
+        else:
+            errorinfo = res.get('errorinfo')
+            tk.messagebox.showinfo(title='查验失败！', message=errorinfo)
 
-        self.gui.result_box.insert('current', str(ret))
 
     def starting(self):
         self.thread = threading.Thread(target=self.click_check_button)
@@ -127,4 +145,7 @@ if __name__ == '__main__':
 
     root = tk.Tk()
     tool = ThreadClient(root)
-    root.mainloop()
+    try:
+        root.mainloop()
+    except:
+        root.destroy()
