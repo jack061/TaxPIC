@@ -4,7 +4,7 @@ import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
-from ImgPreProcess import ImgPreProcesser
+from imgPreProcesser import ImgPreProcesser
 import re
 import os
 from settings import *
