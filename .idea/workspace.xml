@@ -2,12 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01a4be50-9dae-4c92-b98b-fbb8b289ffdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Check/test_componets/Img_Recongnizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Check/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Check/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Check/test_componets/base64_Printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Check/test_componets/base64_Printer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_spider/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_spider/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/ImgPreProcess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/check_response_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/checker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/checker_Gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/downloader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/fp_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/imgPreProcesser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/90a1c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/90a1c.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/common.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/cookies.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/eab23.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/eab23.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/indexfunc.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/result.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/showModalDialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/showModalDialog.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/t.q.b.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/t.q.e.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/20180212/t.q.z.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/AesUtil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/aes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/encrypt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/m.q.d.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/q.b.a.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/s.d.b.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js/t.q.d.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/js_caller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/my_random.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/network_trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/new_spider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/proxies.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/recognizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/test_componets/Img_Recongnizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/test_componets/aliAPI_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/test_componets/base64_Printer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/test_componets/proxy_spider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/yzm_plugin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/查验成功.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Check/验证码请求次数过于频繁.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_spider/ImgPreProcess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_spider/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_spider/network.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,29 +79,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Check/test_componets/aliAPI_test.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Checker_with_Ali/Img_Recongnizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="24" />
+            <state relative-caret-position="756">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Check/imgPreProcesser.py">
+        <entry file="file://$PROJECT_DIR$/Checker_with_Ali/base64_Printer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="33" column="23" selection-start-line="28" selection-start-column="8" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="476">
+              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Check/test.py">
+        <entry file="file://$PROJECT_DIR$/Checker_with_Ali/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+            <state relative-caret-position="1184">
+              <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -64,25 +115,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Check/test_componets/Img_Recongnizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Check/test_componets/base64_Printer.py">
+        <entry file="file://$PROJECT_DIR$/Checker_with_Ali/aliAPI_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="316">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="20" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,6 +223,11 @@
         <option value="$PROJECT_DIR$/Check/test_componets/aliAPI_test.py" />
         <option value="$PROJECT_DIR$/Check/test_componets/Img_Recongnizer.py" />
         <option value="$PROJECT_DIR$/Check/test.py" />
+        <option value="$PROJECT_DIR$/Checker_with_Ali/seetings.py" />
+        <option value="$PROJECT_DIR$/Checker_with_Ali/test.py" />
+        <option value="$PROJECT_DIR$/Checker_with_Ali/Img_Recongnizer.py" />
+        <option value="$PROJECT_DIR$/Checker_with_Ali/base64_Printer.py" />
+        <option value="$PROJECT_DIR$/Checker_with_Ali/aliAPI_test.py" />
       </list>
     </option>
   </component>
@@ -235,33 +279,17 @@
             <path>
               <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="Check" type="462c0819:PsiDirectoryNode" />
+              <item name="Checker_with_Ali" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="Check" type="462c0819:PsiDirectoryNode" />
-              <item name="test_componets" type="462c0819:PsiDirectoryNode" />
+              <item name="Checker_with_CNN" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="PIC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="selenium_spider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaxPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaxPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,15 +306,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Code\TaxPIC\ImgPreProcess" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\TaxPIC\Checker_with_Ali" />
       <recent name="D:\Code\TaxPIC" />
       <recent name="D:\Code\TaxPIC\ImgPreProcess\test" />
       <recent name="D:\Code\TaxPIC\ImgPreProcess" />
       <recent name="D:\Code\TaxPIC\test" />
-      <recent name="D:\Code\TaxPIC\test\spider_template" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\TaxPIC\ImgPreProcess" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -439,12 +467,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538978455093</updated>
-      <workItem from="1542945764391" duration="2052000" />
+      <workItem from="1542945764391" duration="3656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2052000" />
+    <option name="totallyTimeSpent" value="3656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,12 +548,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/ImgPreProcess.py" />
-    <entry file="file://$USER_HOME$/Desktop/fp_parser.py" />
-    <entry file="file://$PROJECT_DIR$/test/spider_template/chinatax_db_checker.py" />
-    <entry file="file://$PROJECT_DIR$/test/spider_template/fp_parser.py" />
-    <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/requests/packages/urllib3/contrib/pyopenssl.py" />
-    <entry file="file://$PROJECT_DIR$/ImgPreProcess/spider.py" />
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/new_pider.py" />
     <entry file="file://$PROJECT_DIR$/ImgPreProcess/test/html.html" />
     <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/torch/serialization.py">
@@ -636,7 +658,7 @@
     <entry file="file://$PROJECT_DIR$/Check/test_componets/img2base64.py" />
     <entry file="file://$PROJECT_DIR$/Check/imgPreProcesser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
+        <state relative-caret-position="448">
           <caret line="33" column="23" selection-start-line="28" selection-start-column="8" selection-end-line="33" selection-end-column="23" />
         </state>
       </provider>
@@ -658,22 +680,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Check/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Check/test_componets/Img_Recongnizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Check/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/proxy_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/seetings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1184">
+          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/base64_Printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/aliAPI_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checker_with_Ali/Img_Recongnizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

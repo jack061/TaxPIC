@@ -11,7 +11,7 @@ imgdata = base64.b64decode(imageBase64)
 image=io.BytesIO(imgdata)
 img = Image.open(image).convert('L')
 
-img.save('d:/dog.png')
+img.save('d:/base64_Printer.png')
 
 
 plt.imshow(img) # 显示图片
