@@ -1,7 +1,4 @@
-import os
-from PIL import Image
-import base64
-import  json
+import json
 import requests
 
 def img_recongnizer(imageBase64):
@@ -15,40 +12,11 @@ def img_recongnizer(imageBase64):
 
     bodys['codeType'] = codeType
     bodys['imageBase64'] = imageBase64
-    headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','Authorization': ('APPCODE ' + appcode)}
-    response = requests.post(url, data=bodys, headers = headers)
+
     # 根据API的要求，定义相对应的Content-Type
+    headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','Authorization': ('APPCODE ' + appcode)}
+
+    response = requests.post(url, data=bodys, headers = headers)
     content = json.loads(response.text)
-    # if (content):
-    # print(content)
+
     return content
-
-def pic2base64(pic_name):
-    with open(pic_name,'rb') as f:
-        base64_code = base64.b64encode(f.read())
-    return base64_code
-
-if __name__ == '__main__':
-
-    img_name = '12.png'
-    folder = 'D:\\'
-    imgPath = os.path.join(folder, img_name)
-    img = Image.open(imgPath)
-    imgArray = img.load()
-
-    x, y = img.size
-
-    for i in range(y):
-        for j in range(x):
-            if (imgArray[j, i][0] < 100 and imgArray[j, i][1] < 100 and imgArray[j, i][2] > 200 and (
-                    imgArray[j, i][0] + imgArray[j, i][1]) < imgArray[j, i][2]):
-                img.putpixel((j, i), (255, 255, 255, 255))
-            else:
-                pass
-
-    img.save(os.path.join(folder, 'test.png'))
-
-    ImgBase64 = pic2base64(os.path.join(folder, 'test.png'))
-    result = img_recongnizer(ImgBase64)
-
-    print(result)

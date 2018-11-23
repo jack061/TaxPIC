@@ -49,7 +49,7 @@ def inputToGetPic(driver, fpInfo = None):
     inputKprq = driver.find_element_by_xpath('//*[@id="kprq"]')
     inputKprq.send_keys(fpInfo['kprq'])
 
-    # 校验码/金额都是这个xpath
+    # 校验码/金额都是这个xpathw
     inputKjje = driver.find_element_by_xpath('//*[@id="kjje"]')
     inputKjje.send_keys(fpInfo['kjje'])
 
