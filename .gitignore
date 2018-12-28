@@ -20,3 +20,9 @@ debug.log
 .idea/vcs.xml
 .idea/workspace.xml
 ImgPreProcess/__pycache__/
+*.pyc
+*.pyc
+*.png
+*.zip
+*.pyc
+*.pyc

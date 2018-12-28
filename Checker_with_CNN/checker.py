@@ -40,7 +40,6 @@ class Checker:
     def __init__(self):
         # 保持cookies # 怎么做？
         self.downloader = Downloader()
-        pass
 
     def _get_swjg_from_fpdm(self, fpdm):
         '''
@@ -238,6 +237,8 @@ class Checker:
         :return:
         '''
         bOK, ret_img = self._get_yzm_image(fpdm, fphm)
+        print('bOK',bOK)
+        print('ret_img', ret_img)
         if not bOK:
             print(str(ret_img))
             # 标示在获取验证码环节出现错误
@@ -270,10 +271,7 @@ class Checker:
 
 
 if __name__=='__main__':
-    success = 0
-    total = 50
-    for i in range(total):
-        time.sleep(10)
+
         c = Checker()
         fpinfo = [
             {'fpdm': '044031700111', 'fphm': '28477743', 'kprq': '20171129', 'kjje': '227858'},
@@ -283,7 +281,6 @@ if __name__=='__main__':
         ]
         fpinfo = random.choice(fpinfo)
         bOK, ret = c.CheckFp(fpinfo['fpdm'], fpinfo['fphm'],fpinfo['kprq'], fpinfo['kjje'])
-        if bOK:
-            success += 1
-    #     print(ret)
+
+        print(ret)
     # print('成功率: ',float(success/total) , '%')

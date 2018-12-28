@@ -43,11 +43,11 @@ tax_citys={ #不同城市查验机关有不同的网址，根据这个去构造�
 
 NETWORK_PATH = r'D:\Code\TaxPIC\model\(69)-net.pkl'  # 保存的网络
 IMAGE_FOLDER = r'D:\pic\cut'  # 存放切分后的图片
-DATASET_FOLDER = r'D:\Code\TaxPIC\PIC\预处理'  # 存放神经网络训练数据集
+DATASET_FOLDER = r'D:\Code\TaxPIC\PIC\训练集'  # 存放神经网络训练数据集
 YZM_SAVEFOLDER = r'D:\pic'  # 存放下载的原始验证码图片
 YZM_CUTFOLDER = r'D:\pic\cut\1'  # 存放处理后切分的图片
 
 MODE = 'test'
 
-PROXY_PATH = 'D:\Code\TaxPIC\ImgPreProcess\proxies.txt'
+PROXY_PATH = 'D:\Code\TaxPIC\Checker_with_CNN\proxies.txt'
 PHANTOMJS_PATH = r'D:\phantomjs\bin\phantomjs.exe'
